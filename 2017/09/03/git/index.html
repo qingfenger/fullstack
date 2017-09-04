@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://qingfenger.github.io/fullstack.github.io/2017/09/03/git/index.html">
 <meta property="og:site_name" content="myblog">
 <meta property="og:description" content="当前任务，学习中… 公司小范围用法：  服务器上做的：12341.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）2.找个目录，建立空仓库 git --bare init 。 ubuntu下： cd /opt —— mkdir git —— git --bare init3.建立文件夹project.git (">
-<meta property="og:updated_time" content="2017-09-03T12:33:54.253Z">
+<meta property="og:updated_time" content="2017-09-04T06:35:58.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git">
 <meta name="twitter:description" content="当前任务，学习中… 公司小范围用法：  服务器上做的：12341.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）2.找个目录，建立空仓库 git --bare init 。 ubuntu下： cd /opt —— mkdir git —— git --bare init3.建立文件夹project.git (">
@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://qingfenger.github.io/fullstack.github.io"></form>
@@ -87,16 +87,16 @@
       
         <p>当前任务，学习中… 公司小范围用法：  服务器上做的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）</div><div class="line">2.找个目录，建立空仓库 git --bare init 。 ubuntu下： <span class="built_in">cd</span> /opt —— mkdir git —— git --bare init</div><div class="line">3.建立文件夹project.git (名字随便取，这里取project，以后别人git <span class="built_in">clone</span>时就会生成project文件夹)。</div><div class="line">4.再建立一个文件夹.ssh，用来存入需要访问的成员的 ssh-keygen</div></pre></td></tr></table></figure></p>
 <h3 id="项目成员机上要做的："><a href="#项目成员机上要做的：" class="headerlink" title="项目成员机上要做的："></a>项目成员机上要做的：</h3><p>生成本机的ssh-keygen：直接运行 ssh-keygen ，回车，回车。生成的密钥会在window下: “C:\Documents and Settings\userName.ssh”，有两个文件，复制id_rsa.pub的内容给服务器管理员（邮件或直接QQ吧！）。<br>轮到服务器管理员：在.ssh文件夹下建立 id_rsa.pub 文件 ， 或直接：cat ~/opt/.ssh/id_rsa.pub 加成员的id_rsa.pub内容 （反正添加到这个文件后面就可以）<br>下面小组成员应该可以正常访问服务器了（对了，在此之前，需要安装ssh服务器 ： apt-get install ssh）<br>项目组老大要做的：<br>     <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.做一个基本项目原型，供项目成员克隆下载 ， 将已有文件推送到git服务器上</div><div class="line">2.新建文件夹，git init 初始化git 。</div><div class="line">3.git add *    将所有文件加入git 监控  ，可以用git status 查看监控状态</div><div class="line">4.git commit -m <span class="string">"你的提交说明"</span></div><div class="line">5.git remote add origin git@yourServerIP:/opt/git/project.git    (这里是将远程git服务器命名成origin，方便以后使用，名字随便改)</div><div class="line">6.推送到服务器   git push origin master   意思是 : git 推送 到  服务器目录 哪个分支—master 。 至此，完毕。</div></pre></td></tr></table></figure></p>
-<p>项目成员基本步骤：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.git <span class="built_in">clone</span> git@serverIP:/opt/git/project.git     完成仓库克隆工作</div><div class="line">2.做该做的事，</div><div class="line">3.git commit -a -m <span class="string">"你的提交说明"</span></div><div class="line">4.git remote add origin git@yourServerIP:/opt/git/project.git</div><div class="line">5.git push origin master 上传分支。</div></pre></td></tr></table></figure></p>
+<pre><code>(-a -m -am/添加 提交 添加提交;git add . 第一次提交除了删除文件全部添加)
+</code></pre><p>项目成员基本步骤：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.git <span class="built_in">clone</span> git@serverIP:/opt/git/project.git     完成仓库克隆工作</div><div class="line">2.做该做的事，</div><div class="line">3.git commit -a -m <span class="string">"你的提交说明"</span></div><div class="line">4.git remote add origin git@yourServerIP:/opt/git/project.git</div><div class="line">5.git push origin master 上传分支。</div></pre></td></tr></table></figure></p>
 <p>当然，还有更多的分支使用技巧…请参考以下书籍：<br>Pro.Git-zh_CN<br>还有一本：<br>Git Community Book 中文版<br> 下面是本人在使用git过程遇到的问题：</p>
-<p>git服务器把文件藏在哪了呢？<br>答：在objects文件夹下。查看文件的方式：不用进入目录下，直接用git cat-file -p 短目录名（如0e）+文件名前n位即可</p>
-<p>参考文章：<a href="http://www.ossxp.com/doc/git/gitolite.html" target="_blank" rel="external">http://www.ossxp.com/doc/git/gitolite.html</a></p>
+<p>git服务器把文件藏在哪了呢？<br>答：在objects文件夹下。查看文件的方式：不用进入目录下，直接用git cat-file -p 短目录名（如0e）+文件名前n位即可<br>——————————————————————————————————————<br>在本地新建dev分支<br>git branch dev<br>git checkout dev<br>然后建立联系<br>git push -u origin dev<br>————————————<br>参考文章：<a href="http://www.ossxp.com/doc/git/gitolite.html" target="_blank" rel="external">http://www.ossxp.com/doc/git/gitolite.html</a></p>
 <p>原文: <a href="http://www.cnblogs.com/trying/archive/2012/06/28/2863758.html" target="_blank" rel="external">http://www.cnblogs.com/trying/archive/2012/06/28/2863758.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qingfenger.github.io/fullstack.github.io/2017/09/03/git/" data-id="cj74tvpcq00008kcbs48wmyrg" class="article-share-link">Share</a>
+      <a data-url="https://qingfenger.github.io/fullstack.github.io/2017/09/03/git/" data-id="cj75somvb0001lkcbzz1xuz0l" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -107,7 +107,7 @@
   
   
     <a href="/2017/09/03/hexo-安装/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">hexo 安装</div>
     </a>
   
@@ -140,7 +140,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -169,7 +169,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Estelle<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
