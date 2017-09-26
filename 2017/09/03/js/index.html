@@ -15,7 +15,7 @@
 <meta property="og:url" content="//qingfenger.github.io/2017/09/03/js/index.html">
 <meta property="og:site_name" content="myblog">
 <meta property="og:description" content="昨天日期：    function GetDateStr(AddDayCount) {        var dd = new Date();        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期        var y = dd.getFullYear();        var m = dd.getMonth()+1">
-<meta property="og:updated_time" content="2017-09-26T05:16:00.676Z">
+<meta property="og:updated_time" content="2017-09-26T05:35:20.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="method">
 <meta name="twitter:description" content="昨天日期：    function GetDateStr(AddDayCount) {        var dd = new Date();        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期        var y = dd.getFullYear();        var m = dd.getMonth()+1">
@@ -189,7 +189,8 @@
 <h2 id="text-是字符串，会被解析成-HTML-或-XML，并插入到-DOM-树中。"><a href="#text-是字符串，会被解析成-HTML-或-XML，并插入到-DOM-树中。" class="headerlink" title="text 是字符串，会被解析成 HTML 或 XML，并插入到 DOM 树中。"></a>text 是字符串，会被解析成 HTML 或 XML，并插入到 DOM 树中。</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">******************获取屏幕高度宽度**************************</div><div class="line">      s += <span class="string">" 网页可见区域宽："</span>+ document.body.clientWidth+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页可见区域高："</span>+ document.body.clientHeight+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页可见区域宽："</span>+ document.body.offsetWidth + <span class="string">" (包括边线和滚动条的宽)"</span>+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页可见区域高："</span>+ document.body.offsetHeight + <span class="string">" (包括边线的宽)"</span>+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页正文全文宽："</span>+ document.body.scrollWidth+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页正文全文高："</span>+ document.body.scrollHeight+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页被卷去的高(ff)："</span>+ document.body.scrollTop+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页被卷去的高(ie)："</span>+ document.documentElement.scrollTop+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页被卷去的左："</span>+ document.body.scrollLeft+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页正文部分上："</span>+ window.screenTop+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页正文部分左："</span>+ window.screenLeft+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 屏幕分辨率的高："</span>+ window.screen.height+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 屏幕分辨率的宽："</span>+ window.screen.width+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 屏幕可用工作区高度："</span>+ window.screen.availHeight+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 屏幕可用工作区宽度："</span>+ window.screen.availWidth+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 你的屏幕设置是 "</span>+ window.screen.colorDepth +<span class="string">" 位彩色"</span>+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 你的屏幕设置 "</span>+ window.screen.deviceXDPI +<span class="string">" 像素/英寸"</span>+<span class="string">"\n"</span>;  </div><div class="line">*******************************************************************</div></pre></td></tr></table></figure>
 <p>document.onreadystatechange 页面加载状态改变时的事件<br>document.readyState 返回当前文档的状态<br>document.onreadystatechange=function(){<br>   console.log(document.readyState==“complete”);<br>   //uninitialized还未载入 loading载入中  interactive已加载，文档与用户可以开始交互 complete载入完成</p>
 <hr>
-<p>if(1,1,1){alert(“123”)}:<br>这是逗号运算符，之前所有的运算表达式都会执行，但整个语句的值是最后一个表达式的值<br>比如：a = (b=2, c=3, 4==4);<br>括号里的是逗号运算表达式，b=2, c=3这样的赋值表达式会正常执行，<br>但a最后的值是true，也就是4==4的结果，true；如果换成4==5，a就是false了<br>而 &amp;&amp; 表达式是只要其中一个为假，那么整个表达式就是假<br>逗号表达式(s=a, b, c, …., n)s的值就是n的值，与前面的都没有关系，只是正常的执行罢了，不会影响结果</p>
+<p>if(1,1,1){alert(“123”)}:<br>这是逗号运算符，之前所有的运算表达式都会执行，但整个语句的值是最后一个表达式的值<br>比如：a = (b=2, c=3, 4==4);<br>括号里的是逗号运算表达式，b=2, c=3这样的赋值表达式会正常执行，<br>但a最后的值是true，也就是4==4的结果，true；如果换成4==5，a就是false了<br>而 &amp;&amp; 表达式是只要其中一个为假，那么整个表达式就是假</p>
+<h2 id="逗号表达式-s-a-b-c-…-n-s的值就是n的值，与前面的都没有关系，只是正常的执行罢了，不会影响结果"><a href="#逗号表达式-s-a-b-c-…-n-s的值就是n的值，与前面的都没有关系，只是正常的执行罢了，不会影响结果" class="headerlink" title="逗号表达式(s=a, b, c, …., n)s的值就是n的值，与前面的都没有关系，只是正常的执行罢了，不会影响结果"></a>逗号表达式(s=a, b, c, …., n)s的值就是n的值，与前面的都没有关系，只是正常的执行罢了，不会影响结果</h2><p>js错误处理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.onerror = <span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">return</span> <span class="literal">true</span>;&#125;;隐藏错误信息 </div><div class="line">try&#123;&#125;catch(e)&#123;&#125;捕捉但不跳出循环继续执行</div><div class="line">获取标签之外的内容</div><div class="line">&lt;h3&gt;&lt;span&gt;中文图书&lt;/span&gt;&lt;a href=<span class="string">"item.php?marc_no=0000283487"</span>&gt;&lt;b&gt;2.&lt;em style=<span class="string">"color:#F00;"</span>&gt;经济&lt;/em&gt;法&lt;/b&gt;&lt;/a&gt;     D922.29/357&lt;/h3&gt;</div><div class="line">var text = $(<span class="string">"h3"</span>).contents().filter(<span class="function"><span class="title">function</span></span>() &#123; <span class="built_in">return</span> this.nodeType === 3; &#125;).text();</div></pre></td></tr></table></figure></p>
 
       
 
@@ -294,18 +295,18 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/03/notes/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2017/09/25/mobile/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          note
+          mobile
         
       </div>
     </a>
   
   
-    <a href="/fullstack/2017/09/03/hexo-安装/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo 安装</div>
+    <a href="/fullstack/2017/09/03/notes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">note</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -463,11 +464,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Method</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mobile</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mobile</a>
+                <a href="javascript:void(0)" class="js-tag color2">Method</a>
               </li>
              
               <li class="article-tag-list-item">
