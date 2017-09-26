@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>Tag: Git | myblog</title>
+  <title>css | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="myblog">
-<meta property="og:url" content="//qingfenger.github.io/tags/Git/index.html">
+  <meta name="description" content="———-禁止网页文本选中————–body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none;}">
+<meta name="keywords" content="Css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css">
+<meta property="og:url" content="//qingfenger.github.io/2017/09/26/css/index.html">
 <meta property="og:site_name" content="myblog">
+<meta property="og:description" content="———-禁止网页文本选中————–body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none;}">
+<meta property="og:updated_time" content="2017-09-26T05:06:19.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myblog">
+<meta name="twitter:title" content="css">
+<meta name="twitter:description" content="———-禁止网页文本选中————–body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none;}">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -149,60 +154,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-css" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/fullstack/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/fullstack/2017/09/03/git/" class="archive-article-date">
-  	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/fullstack/2017/09/03/git/">git</a>
+    <h1 class="article-title" itemprop="name">
+      css
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/fullstack/2017/09/26/css/" class="archive-article-date">
+  	<time datetime="2017-09-26T02:42:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>———-禁止网页文本选中————–<br>body{<br>-webkit-touch-callout: none;<br>-webkit-user-select: none;<br>-khtml-user-select: none;<br>-moz-user-select: none;<br>-ms-user-select: none;</p>
+<h2 id="user-select-none"><a href="#user-select-none" class="headerlink" title="user-select: none;}"></a>user-select: none;}</h2><a id="more"></a>
+<p>CSS3计算calc和vw单位巧妙实现滚动条出现页面不跳动 .wrap-outer指的是居中定宽主体的父级<br>.wrap-outer {<br>    margin-left: calc(100vw - 100%);<br>}<br>.demo{<br>    width:100vw;<br>    font-size:10vw;//宽度为窗口100%，字体大小为窗口的10%；<br>}</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">垂直居中/position:absolute;</div><div class="line">.parent &#123;</div><div class="line">            width:800px;</div><div class="line">            height:500px;</div><div class="line">            border:2px solid <span class="comment">#000;</span></div><div class="line">            display:table-cell;</div><div class="line">            vertical-align:middle;</div><div class="line">            text-align: center;</div><div class="line">        &#125;</div><div class="line">.child &#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    display:inline-block;</div><div class="line">    background-color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">overflow: hidden; /*自动隐藏文字*/</div><div class="line">text-overflow: ellipsis;/*文字隐藏后添加省略号*/</div><div class="line">white-space: nowrap;/*强制不换行*/</div></pre></td></tr></table></figure>
+<p>———ie 背景透明文字不透明————–<br>background:rgba(255, 255, 255, 0.8) none repeat scroll 0 0 !important;/<em>实现FF背景透明，文字不透明</em>/<br>filter:Alpha(opacity=80); background:#fff;/<em>实现IE背景透明</em>/}</p>
+<h2 id="con-p-position-relative-实现IE文字不透明"><a href="#con-p-position-relative-实现IE文字不透明" class="headerlink" title=".con p{ position:relative;}/实现IE文字不透明/"></a>.con p{ position:relative;}/<em>实现IE文字不透明</em>/</h2><p>iframe:frameborder=”0” scrolling=”no”<br>表格边框：table{<br>              border-collapse:collapse;合并separate;分开<br>              border-spacing:10px 50px;//边框空间<br>              empty-cells:hide;隐藏表格中空单元格上的边框和背景<br>          }</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">---------------改变input输入框中placeholder的字体样式：--------------------</div><div class="line">:-moz-placeholder &#123; /* Mozilla Firefox 4 to 18 */</div><div class="line">    color: <span class="comment">#f00;  </span></div><div class="line">&#125;</div><div class="line">::-moz-placeholder &#123; /* Mozilla Firefox 19+ */</div><div class="line">    color: <span class="comment">#f00;</span></div><div class="line">&#125;</div><div class="line">input:-ms-input-placeholder,</div><div class="line">textarea:-ms-input-placeholder &#123;</div><div class="line">    color: <span class="comment">#f00;</span></div><div class="line">&#125;</div><div class="line">input::-webkit-input-placeholder,</div><div class="line">textarea::-webkit-input-placeholder &#123;</div><div class="line">    color: <span class="comment">#f00;</span></div><div class="line">&#125;</div><div class="line">还原移动端按钮的样式：-webkit-appearance:none;</div></pre></td></tr></table></figure>
+<p>———-transiton—————–<br>@keyframes mymove<br>{<br>0%   {top:0px;}<br>25%  {top:200px;}<br>50%  {top:100px;}<br>75%  {top:200px;}<br>100% {top:0px;}<br>}<br>@-moz-keyframes mymove /<em> Firefox </em>/<br>{<br>0%   {top:0px;}<br>25%  {top:200px;}<br>50%  {top:100px;}<br>75%  {top:200px;}<br>100% {top:0px;}<br>}<br>@-webkit-keyframes mymove /<em> Safari 和 Chrome </em>/<br>{<br>0%   {top:0px;}<br>25%  {top:200px;}<br>50%  {top:100px;}<br>75%  {top:200px;}<br>100% {top:0px;}<br>}<br>@-o-keyframes mymove /<em> Opera </em>/<br>{<br>0%   {top:0px;}<br>25%  {top:200px;}<br>50%  {top:100px;}<br>75%  {top:200px;}<br>100% {top:0px;}</p>
+<h2 id=""><a href="#" class="headerlink" title="}"></a>}</h2><pre><code class="bash">苹果input disabled样式
+    input:disabled {
+        -webkit-text-fill-color: rgba(0, 0, 0, 1);
+        -webkit-opacity: 1;
+    }
+</code></pre>
+<p>```bash<br><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong>滚动条设置<strong><strong><strong><strong><strong><strong><strong><strong><em>*</em></strong></strong></strong></strong></strong></strong></strong></strong><br>   .reportLeft::-webkit-scrollbar {<br>        width: 8px;/<em>滚动条高度</em>/<br>        height: 8px; /<em>滚动条宽度</em>/<br>        background-color: #cccccc;<br>      }<br>      /<em>定义滚动条轨道 内阴影+圆角</em>/<br>   .reportLeft::-webkit-scrollbar-track {<br>        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);<br>        background: #fff ;<br>      }<br>      /<em>定义滑块 内阴影+圆角</em>/<br>    .reportLeft::-webkit-scrollbar-thumb {<br>        border-radius: 3px;<br>        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);<br>        background-color:rgba(204, 204, 204, 0.7);<br>      }<br>    .reportLeft::-webkit-scrollbar-thumb:hover {<br>        border-radius: 3px;<br>        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);<br>        background-color:rgba(204,204,204, 1);<br>      }</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/26/css/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/fullstack/2017/09/26/mobilefont/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          mobilefont
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/fullstack/2017/09/26/node/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node.js</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "//qingfenger.github.io/fullstack/2017/09/26/css/",
+  owner: '13749686',
+  repo: 'https://qingfenger.github.io/fullstack/',
+  oauth: {
+    client_id: 'd27cac6107b0536f9f4a',
+    client_secret: '86dd74f130c852b29c76070bf2046b060a5aed43',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -225,9 +377,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
