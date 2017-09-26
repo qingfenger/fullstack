@@ -12,10 +12,10 @@
 <meta name="keywords" content="method">
 <meta property="og:type" content="article">
 <meta property="og:title" content="method">
-<meta property="og:url" content="//qingfenger.github.io/2017/09/03/method/index.html">
+<meta property="og:url" content="//qingfenger.github.io/2017/09/03/js/index.html">
 <meta property="og:site_name" content="myblog">
 <meta property="og:description" content="昨天日期：    function GetDateStr(AddDayCount) {        var dd = new Date();        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期        var y = dd.getFullYear();        var m = dd.getMonth()+1">
-<meta property="og:updated_time" content="2017-09-25T03:06:51.663Z">
+<meta property="og:updated_time" content="2017-09-26T03:18:20.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="method">
 <meta name="twitter:description" content="昨天日期：    function GetDateStr(AddDayCount) {        var dd = new Date();        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期        var y = dd.getFullYear();        var m = dd.getMonth()+1">
@@ -154,7 +154,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-method" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -166,7 +166,7 @@
   
 
         
-        <a href="/fullstack/2017/09/03/method/" class="archive-article-date">
+        <a href="/fullstack/2017/09/03/js/" class="archive-article-date">
   	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
 </a>
         
@@ -175,7 +175,27 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>昨天日期：<br>    function GetDateStr(AddDayCount) {<br>        var dd = new Date();<br>        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期<br>        var y = dd.getFullYear();<br>        var m = dd.getMonth()+1;//获取当前月份的日期<br>        var d = dd.getDate();<br>        return y+”-“+m+”-“+d;<br>    }<br>    console.log(“<br>昨天：”+GetDateStr(-1));</p>
-
+<p>——函数返回值———<br>    function Test() {<br>        　　this.name = ‘Test’;<br>        　　return ‘Test’;<br>    }<br>    var fnT = Test();<br>    console.log(fnT);<br>    var newT = new Test();<br>    console.log(newT);<br>    如果函数返回值为常规意义上的值类型（Number、String、Boolean）时，new函数将会返回一个该函数的实例对象，而如果函数返回一个引用类型（Object、Array、Function），则new函数与直接调用函数产生的结果等同。</p>
+<pre><code>{% asset_img 1.jpg %}
+</code></pre><hr>
+<p>$(“.checktype input:radio:checked”).each(function(index,elem){<br>    typeArray.push( $(elem).val());//选中的内容数组<br>});    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">-----------比较器</div><div class="line"><span class="keyword">function</span> compare(propertyName) &#123;</div><div class="line">	<span class="built_in">return</span> <span class="keyword">function</span> (object1, object2) &#123;</div><div class="line">		var value1 = object1[propertyName];</div><div class="line">		var value2 = object2[propertyName];</div><div class="line">		<span class="keyword">if</span> (parseFloat(value2) &lt; parseFloat(value1)) &#123;</div><div class="line">			<span class="built_in">return</span> -1;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (parseFloat(value2) &gt; parseFloat(value1)) &#123;</div><div class="line">			<span class="built_in">return</span> 1;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="built_in">return</span> 0;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>iframe跨域修改url<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">document.domain = <span class="string">"sinopec.com"</span>;</div><div class="line"> var url = window.top.location.href;</div><div class="line"> var url = window.parent.parent.location.href;</div></pre></td></tr></table></figure></p>
+<p>——-缓存—–<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.addEventListener(<span class="string">'pageshow'</span>, <span class="keyword">function</span>( e )&#123;</div><div class="line">	<span class="keyword">if</span> (e.persisted) &#123;//如果有缓存</div><div class="line">		window.location.reload()</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>// 清除IE的ajax的结果缓存<br>$.ajaxSetup({ cache: false });</p>
+<p>/* </p>
+<ul>
+<li>获取url参数</li>
+<li>*/<br>function searchvalue(name){<br>var name_val=’’;<br>var search=window.location.search.slice(1);<br>var ss=search.split(‘&amp;’);<br>ss.forEach(function(value,index,array){<pre><code>var aa=value.split(&apos;=&apos;);
+if(aa[0]==name){
+    name_val=aa[1];
+}
+</code></pre>})<br>return name_val;<br>}<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">   单双击区别</div><div class="line">**/</div><div class="line">var flag = <span class="literal">true</span>;</div><div class="line">var	first = 0;</div><div class="line">var f_value=<span class="string">''</span>;</div><div class="line">var second = 0;</div><div class="line">var s_value=<span class="string">''</span>;</div><div class="line">myChart.on(<span class="string">'click'</span>, <span class="keyword">function</span> (params) &#123;</div><div class="line">	isclick(params);</div><div class="line">&#125;);</div><div class="line"><span class="keyword">function</span> isclick(p)&#123;</div><div class="line">	var date = new Date();</div><div class="line">	var pa_name=p.name;</div><div class="line">	var one = date.getTime();</div><div class="line">	<span class="keyword">if</span>(flag)&#123;</div><div class="line">		first = one;</div><div class="line">		f_value=pa_name;</div><div class="line">		flag = <span class="literal">false</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		second = one;</div><div class="line">		s_value=pa_name;</div><div class="line">		flag = <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">	var end = 0 ;</div><div class="line">	<span class="keyword">if</span>(second &gt; first)&#123;</div><div class="line">		end = second - first ;</div><div class="line">		<span class="keyword">if</span>(end &lt; 500  &amp;&amp; (f_value==s_value))&#123;//双击</div><div class="line">			var param=&#123;</div><div class="line">				  		code:p.data.code,</div><div class="line">				  		name:p.data.name,</div><div class="line">				  		value:p.data.value</div><div class="line">				  &#125;</div><div class="line">			var result_indate=getfdate();</div><div class="line">			mui.openWindow(&#123;url:<span class="string">'dspzPage.jhtml?IsRefresh=false&amp;token='</span>+initialData.token+<span class="string">'&amp;clientflag='</span>+initialData.clientflag+<span class="string">'&amp;openid='</span>+initialData.openid+<span class="string">'&amp;rowid='</span>+param.code+<span class="string">'&amp;ftdate='</span>+initialData.ftdate+<span class="string">'&amp;indate='</span>+result_indate+<span class="string">'&amp;c_date=1&amp;c_type=1&amp;datarowname='</span>+param.name+<span class="string">'&amp;provence='</span>&#125;);</div><div class="line"></div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			first=one;</div><div class="line">			f_value=pa_name;</div><div class="line">			second=<span class="string">''</span>;</div><div class="line">			s_value=<span class="string">''</span>;</div><div class="line">			<span class="built_in">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>————————原生插入html———————<br>element.insertAdjacentHTML(position, text);<br>position 是相对于 element 元素的位置，并且只能是以下的字符串之一：</p>
+<p>beforebegin：在 element 元素的前面。<br>afterbegin：在 element 元素的第一个子节点前面。<br>beforeend：在 element 元素的最后一个子节点后面。<br>afterend：在 element 元素的后面。</p>
+<h2 id="text-是字符串，会被解析成-HTML-或-XML，并插入到-DOM-树中。"><a href="#text-是字符串，会被解析成-HTML-或-XML，并插入到-DOM-树中。" class="headerlink" title="text 是字符串，会被解析成 HTML 或 XML，并插入到 DOM 树中。"></a>text 是字符串，会被解析成 HTML 或 XML，并插入到 DOM 树中。</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">******************获取屏幕高度宽度**************************</div><div class="line">      s += <span class="string">" 网页可见区域宽："</span>+ document.body.clientWidth+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页可见区域高："</span>+ document.body.clientHeight+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页可见区域宽："</span>+ document.body.offsetWidth + <span class="string">" (包括边线和滚动条的宽)"</span>+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页可见区域高："</span>+ document.body.offsetHeight + <span class="string">" (包括边线的宽)"</span>+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页正文全文宽："</span>+ document.body.scrollWidth+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页正文全文高："</span>+ document.body.scrollHeight+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页被卷去的高(ff)："</span>+ document.body.scrollTop+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页被卷去的高(ie)："</span>+ document.documentElement.scrollTop+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页被卷去的左："</span>+ document.body.scrollLeft+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页正文部分上："</span>+ window.screenTop+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 网页正文部分左："</span>+ window.screenLeft+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 屏幕分辨率的高："</span>+ window.screen.height+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 屏幕分辨率的宽："</span>+ window.screen.width+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 屏幕可用工作区高度："</span>+ window.screen.availHeight+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 屏幕可用工作区宽度："</span>+ window.screen.availWidth+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 你的屏幕设置是 "</span>+ window.screen.colorDepth +<span class="string">" 位彩色"</span>+<span class="string">"\n"</span>;    </div><div class="line">      s += <span class="string">" 你的屏幕设置 "</span>+ window.screen.deviceXDPI +<span class="string">" 像素/英寸"</span>+<span class="string">"\n"</span>;  </div><div class="line">*******************************************************************</div></pre></td></tr></table></figure>
       
 
       
@@ -265,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/03/method/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/03/js/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +299,18 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/03/blogurl/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2017/09/03/notes/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          blogurl
+          note
         
       </div>
     </a>
   
   
-    <a href="/fullstack/2017/09/03/notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">note</div>
+    <a href="/fullstack/2017/09/03/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -329,7 +349,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//qingfenger.github.io/fullstack/2017/09/03/method/",
+  id: "//qingfenger.github.io/fullstack/2017/09/03/js/",
   owner: '13749686',
   repo: 'https://qingfenger.github.io/fullstack/',
   oauth: {
@@ -432,10 +452,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
@@ -445,6 +461,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">method</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
