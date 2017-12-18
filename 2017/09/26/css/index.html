@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="//qingfenger.github.io">
   <title>css | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="———-禁止网页文本选中————–body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none;}—-小于1px的左边框———.detail_list  li .ro">
+  <meta name="description" content="禁止网页文本选中body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;} 小于1px的左边框.detail_list  li .row_con&amp;gt;div{">
 <meta name="keywords" content="Css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css">
 <meta property="og:url" content="//qingfenger.github.io/2017/09/26/css/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="———-禁止网页文本选中————–body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none;}—-小于1px的左边框———.detail_list  li .ro">
-<meta property="og:updated_time" content="2017-10-13T02:20:06.660Z">
+<meta property="og:description" content="禁止网页文本选中body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;} 小于1px的左边框.detail_list  li .row_con&amp;gt;div{">
+<meta property="og:updated_time" content="2017-12-18T05:26:50.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css">
-<meta name="twitter:description" content="———-禁止网页文本选中————–body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none;}—-小于1px的左边框———.detail_list  li .ro">
+<meta name="twitter:description" content="禁止网页文本选中body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;} 小于1px的左边框.detail_list  li .row_con&amp;gt;div{">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -174,14 +174,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>———-禁止网页文本选中————–<br>body{<br>-webkit-touch-callout: none;<br>-webkit-user-select: none;<br>-khtml-user-select: none;<br>-moz-user-select: none;<br>-ms-user-select: none;</p>
-<h2 id="user-select-none"><a href="#user-select-none" class="headerlink" title="user-select: none;}"></a>user-select: none;}</h2><p>—-小于1px的左边框———<br>.detail_list  li .row_con&gt;div{<br>  height:0.8rem;<br>  box-sizing:border-box;<br>  background-position: 0 0;<br>    background-repeat: repeat-y;<br>    background-size: 1px 100%;<br>    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(20%,transparent),color-stop(20%,#dcdcdc),color-stop(80%,#dcdcdc),color-stop(80%,transparent));<br>    background-image: -webkit-linear-gradient(top,transparent 20%,#dcdcdc 120%,#dcdcdc 80%,transparent 80%);<br>    background-image: linear-gradient(180deg,transparent 20%,#dcdcdc 20%,#dcdcdc 80%,transparent 80%);</p>
+        <p><strong>禁止网页文本选中</strong><br>body{<br>-webkit-touch-callout: none;<br>-webkit-user-select: none;<br>-khtml-user-select: none;<br>-moz-user-select: none;<br>-ms-user-select: none;<br>user-select: none;<br>}</p>
+<p><strong>小于1px的左边框</strong><br>.detail_list  li .row_con&gt;div{<br>  height:0.8rem;<br>  box-sizing:border-box;<br>  background-position: 0 0;<br>    background-repeat: repeat-y;<br>    background-size: 1px 100%;<br>    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(20%,transparent),color-stop(20%,#dcdcdc),color-stop(80%,#dcdcdc),color-stop(80%,transparent));<br>    background-image: -webkit-linear-gradient(top,transparent 20%,#dcdcdc 120%,#dcdcdc 80%,transparent 80%);<br>    background-image: linear-gradient(180deg,transparent 20%,#dcdcdc 20%,#dcdcdc 80%,transparent 80%);</p>
 <h2 id=""><a href="#" class="headerlink" title="}"></a>}</h2><a id="more"></a>
 <p>CSS3计算calc和vw单位巧妙实现滚动条出现页面不跳动 .wrap-outer指的是居中定宽主体的父级<br>.wrap-outer {<br>    margin-left: calc(100vw - 100%);<br>}<br>.demo{<br>    width:100vw;<br>    font-size:10vw;//宽度为窗口100%，字体大小为窗口的10%；<br>}</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">垂直居中/position:absolute;</div><div class="line">.parent &#123;</div><div class="line">            width:800px;</div><div class="line">            height:500px;</div><div class="line">            border:2px solid <span class="comment">#000;</span></div><div class="line">            display:table-cell;</div><div class="line">            vertical-align:middle;</div><div class="line">            text-align: center;</div><div class="line">        &#125;</div><div class="line">.child &#123;</div><div class="line">    width:200px;</div><div class="line">    height:200px;</div><div class="line">    display:inline-block;</div><div class="line">    background-color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>多行文本显示省略号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">overflow: hidden; /*自动隐藏文字*/</div><div class="line">text-overflow: ellipsis;/*文字隐藏后添加省略号*/</div><div class="line">white-space: nowrap;/*强制不换行*/</div><div class="line"></div><div class="line"></div><div class="line">display: -webkit-box;</div><div class="line">-webkit-box-orient: vertical;</div><div class="line">-webkit-line-clamp: 3;</div><div class="line">overflow: hidden;</div></pre></td></tr></table></figure></p>
-<p>———ie 背景透明文字不透明————–<br>background:rgba(255, 255, 255, 0.8) none repeat scroll 0 0 !important;/<em>实现FF背景透明，文字不透明</em>/<br>filter:Alpha(opacity=80); background:#fff;/<em>实现IE背景透明</em>/}</p>
-<h2 id="con-p-position-relative-实现IE文字不透明"><a href="#con-p-position-relative-实现IE文字不透明" class="headerlink" title=".con p{ position:relative;}/实现IE文字不透明/"></a>.con p{ position:relative;}/<em>实现IE文字不透明</em>/</h2><p>iframe:frameborder=”0” scrolling=”no”<br>表格边框：table{<br>              border-collapse:collapse;合并separate;分开<br>              border-spacing:10px 50px;//边框空间<br>              empty-cells:hide;隐藏表格中空单元格上的边框和背景<br>          }</p>
+<p>垂直居中方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div style=<span class="string">"border:1px solid #333333;width:130px;height:80px;display:table-cell;vertical-align:middle;"</span>&gt;</div><div class="line">  &lt;div&gt;啊啊啊啊啊啊啊啊啊啊&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div style=<span class="string">"border:1px solid #333333;width:130px;height:80px;display:flex;align-items:center;"</span>&gt;</div><div class="line">  &lt;div&gt;啊啊啊啊啊啊啊啊啊啊&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div style=<span class="string">"border:1px solid #333333;width:130px;height:80px;position:relative;"</span>&gt;</div><div class="line">  &lt;div style=<span class="string">"position:absolute;top:50%;transform:translateY(-50%);"</span>&gt;啊啊啊啊啊啊啊啊啊啊&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div style=<span class="string">"border:1px solid #333333;width:130px;height:80px;display:table-cell;vertical-align:middle;"</span>&gt;</div><div class="line">  &lt;div&gt;啊啊啊啊啊啊啊啊啊啊&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>———ie 背景透明文字不透明————–<br>background:rgba(255, 255, 255, 0.8) none repeat scroll 0 0 !important;/<em>实现FF背景透明，文字不透明</em>/<br>filter:Alpha(opacity=80); background:#fff;/<em>实现IE背景透明</em>/}<br>.con p{ position:relative;}</p>
+<h2 id="实现IE文字不透明"><a href="#实现IE文字不透明" class="headerlink" title="/实现IE文字不透明/"></a>/<em>实现IE文字不透明</em>/</h2><p>iframe:frameborder=”0” scrolling=”no”<br>表格边框：table{<br>              border-collapse:collapse;合并separate;分开<br>              border-spacing:10px 50px;//边框空间<br>              empty-cells:hide;隐藏表格中空单元格上的边框和背景<br>          }</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">---------------改变input输入框中placeholder的字体样式：--------------------</div><div class="line">:-moz-placeholder &#123; /* Mozilla Firefox 4 to 18 */</div><div class="line">    color: <span class="comment">#f00;  </span></div><div class="line">&#125;</div><div class="line">::-moz-placeholder &#123; /* Mozilla Firefox 19+ */</div><div class="line">    color: <span class="comment">#f00;</span></div><div class="line">&#125;</div><div class="line">input:-ms-input-placeholder,</div><div class="line">textarea:-ms-input-placeholder &#123;</div><div class="line">    color: <span class="comment">#f00;</span></div><div class="line">&#125;</div><div class="line">input::-webkit-input-placeholder,</div><div class="line">textarea::-webkit-input-placeholder &#123;</div><div class="line">    color: <span class="comment">#f00;</span></div><div class="line">&#125;</div><div class="line">还原移动端按钮的样式：-webkit-appearance:none;</div></pre></td></tr></table></figure>
 <p>———-transiton—————–<br>@keyframes mymove<br>{<br>0%   {top:0px;}<br>25%  {top:200px;}<br>50%  {top:100px;}<br>75%  {top:200px;}<br>100% {top:0px;}<br>}<br>@-moz-keyframes mymove /<em> Firefox </em>/<br>{<br>0%   {top:0px;}<br>25%  {top:200px;}<br>50%  {top:100px;}<br>75%  {top:200px;}<br>100% {top:0px;}<br>}<br>@-webkit-keyframes mymove /<em> Safari 和 Chrome </em>/<br>{<br>0%   {top:0px;}<br>25%  {top:200px;}<br>50%  {top:100px;}<br>75%  {top:200px;}<br>100% {top:0px;}<br>}<br>@-o-keyframes mymove /<em> Opera </em>/<br>{<br>0%   {top:0px;}<br>25%  {top:200px;}<br>50%  {top:100px;}<br>75%  {top:200px;}<br>100% {top:0px;}</p>
 <h2 id="-1"><a href="#-1" class="headerlink" title="}"></a>}</h2><pre><code class="bash">苹果input disabled样式
@@ -191,6 +192,10 @@
     }
 </code></pre>
 <p>```bash<br><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong>滚动条设置<strong><strong><strong><strong><strong><strong><strong><strong><em>*</em></strong></strong></strong></strong></strong></strong></strong></strong><br>   .reportLeft::-webkit-scrollbar {<br>        width: 8px;/<em>滚动条高度</em>/<br>        height: 8px; /<em>滚动条宽度</em>/<br>        background-color: #cccccc;<br>      }<br>      /<em>定义滚动条轨道 内阴影+圆角</em>/<br>   .reportLeft::-webkit-scrollbar-track {<br>        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);<br>        background: #fff ;<br>      }<br>      /<em>定义滑块 内阴影+圆角</em>/<br>    .reportLeft::-webkit-scrollbar-thumb {<br>        border-radius: 3px;<br>        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);<br>        background-color:rgba(204, 204, 204, 0.7);<br>      }<br>    .reportLeft::-webkit-scrollbar-thumb:hover {<br>        border-radius: 3px;<br>        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);<br>        background-color:rgba(204,204,204, 1);<br>      }</p>
+<p><strong>css:</strong><br><strong>文字渐变</strong><br>    background-image: -webkit-linear-gradient(left, rgb(255, 118, 92), rgb(255, 35, 179));<br>    -webkit-background-clip: text;<br>    -webkit-text-fill-color: transparent;//text-fill-color会覆盖color所定义的字体颜色：</p>
+<p><strong>边框小于1px</strong><br>.bdr-r:after {<br>    height: 100%;<br>    content: ‘’;<br>    width: 1PX;<br>    border-right: 1PX solid #f0f0f0;<br>    position: absolute;<br>    top: 0;<br>    right: 0;<br>    transform: scaleX(0.5);<br>    -webkit-transform: scaleX(0.5);<br>    z-index: 10;<br>}</p>
+<p><strong>垂直居中</strong><br>父：div{<br>  line-height:0.6rem;<br>}<br>子：span{<br>display: inline-block;<br>    vertical-align: middle;<br>    line-height: 0.26rem;<br>}</p>
+<p><strong>fixd absolute遮罩层点击时永远不获取target即没有点击事件css3：pointer-events:none;</strong></p>
 
       
 
@@ -448,11 +453,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,19 +469,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Mobile</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Tool</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Tool</a>
               </li>
              
               <li class="article-tag-list-item">

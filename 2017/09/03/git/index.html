@@ -15,7 +15,7 @@
 <meta property="og:url" content="//qingfenger.github.io/2017/09/03/git/index.html">
 <meta property="og:site_name" content="myblog">
 <meta property="og:description" content="当前任务，学习中… 公司小范围用法：  服务器上做的：12341.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）2.找个目录，建立空仓库 git --bare init 。 ubuntu下： cd /opt —— mkdir git —— git --bare init3.建立文件夹project.git (">
-<meta property="og:updated_time" content="2017-09-26T05:03:50.077Z">
+<meta property="og:updated_time" content="2017-12-18T05:22:14.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git">
 <meta name="twitter:description" content="当前任务，学习中… 公司小范围用法：  服务器上做的：12341.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）2.找个目录，建立空仓库 git --bare init 。 ubuntu下： cd /opt —— mkdir git —— git --bare init3.建立文件夹project.git (">
@@ -182,7 +182,7 @@
 <p>当然，还有更多的分支使用技巧…请参考以下书籍：<br>Pro.Git-zh_CN<br>还有一本：<br>Git Community Book 中文版<br> 下面是本人在使用git过程遇到的问题：</p>
 <p>git服务器把文件藏在哪了呢？<br>答：在objects文件夹下。查看文件的方式：不用进入目录下，直接用git cat-file -p 短目录名（如0e）+文件名前n位即可<br>——————————————————————————————————————<br>在本地新建dev分支<br>git branch dev<br>git checkout dev<br>然后建立联系<br>git push -u origin dev<br>————————————<br>参考文章：<a href="http://www.ossxp.com/doc/git/gitolite.html" target="_blank" rel="external">http://www.ossxp.com/doc/git/gitolite.html</a></p>
 <p>原文: <a href="http://www.cnblogs.com/trying/archive/2012/06/28/2863758.html" target="_blank" rel="external">http://www.cnblogs.com/trying/archive/2012/06/28/2863758.html</a></p>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git本地版本控制</div><div class="line">git init</div><div class="line">添加exclude</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">"first commit"</span></div></pre></td></tr></table></figure>
       
 
       
@@ -286,11 +286,11 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/25/mobile/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2017/09/03/notes/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mobile
+          note
         
       </div>
     </a>
@@ -439,11 +439,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,19 +455,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Mobile</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Tool</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Tool</a>
               </li>
              
               <li class="article-tag-list-item">
