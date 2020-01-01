@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
   <title>git | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="//qingfenger.github.io/2017/09/03/git/index.html">
 <meta property="og:site_name" content="myblog">
 <meta property="og:description" content="当前任务，学习中… 公司小范围用法：  服务器上做的：12341.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）2.找个目录，建立空仓库 git --bare init 。 ubuntu下： cd /opt —— mkdir git —— git --bare init3.建立文件夹project.git (">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-12-18T05:22:14.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git">
@@ -37,7 +38,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -174,15 +175,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当前任务，学习中… 公司小范围用法：  服务器上做的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）</div><div class="line">2.找个目录，建立空仓库 git --bare init 。 ubuntu下： <span class="built_in">cd</span> /opt —— mkdir git —— git --bare init</div><div class="line">3.建立文件夹project.git (名字随便取，这里取project，以后别人git <span class="built_in">clone</span>时就会生成project文件夹)。</div><div class="line">4.再建立一个文件夹.ssh，用来存入需要访问的成员的 ssh-keygen</div></pre></td></tr></table></figure></p>
+        <p>当前任务，学习中… 公司小范围用法：  服务器上做的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）</span><br><span class="line">2.找个目录，建立空仓库 git --bare init 。 ubuntu下： <span class="built_in">cd</span> /opt —— mkdir git —— git --bare init</span><br><span class="line">3.建立文件夹project.git (名字随便取，这里取project，以后别人git <span class="built_in">clone</span>时就会生成project文件夹)。</span><br><span class="line">4.再建立一个文件夹.ssh，用来存入需要访问的成员的 ssh-keygen</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h3 id="项目成员机上要做的："><a href="#项目成员机上要做的：" class="headerlink" title="项目成员机上要做的："></a>项目成员机上要做的：</h3><p>生成本机的ssh-keygen：直接运行 ssh-keygen ，回车，回车。生成的密钥会在window下: “C:\Documents and Settings\userName.ssh”，有两个文件，复制id_rsa.pub的内容给服务器管理员（邮件或直接QQ吧！）。<br>轮到服务器管理员：在.ssh文件夹下建立 id_rsa.pub 文件 ， 或直接：cat ~/opt/.ssh/id_rsa.pub 加成员的id_rsa.pub内容 （反正添加到这个文件后面就可以）<br>下面小组成员应该可以正常访问服务器了（对了，在此之前，需要安装ssh服务器 ： apt-get install ssh）<br>项目组老大要做的：<br>     <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.做一个基本项目原型，供项目成员克隆下载 ， 将已有文件推送到git服务器上</div><div class="line">2.新建文件夹，git init 初始化git 。</div><div class="line">3.git add *    将所有文件加入git 监控  ，可以用git status 查看监控状态</div><div class="line">4.git commit -m <span class="string">"你的提交说明"</span></div><div class="line">5.git remote add origin git@yourServerIP:/opt/git/project.git    (这里是将远程git服务器命名成origin，方便以后使用，名字随便改)</div><div class="line">6.推送到服务器   git push origin master   意思是 : git 推送 到  服务器目录 哪个分支—master 。 至此，完毕。</div></pre></td></tr></table></figure></p>
+<h3 id="项目成员机上要做的："><a href="#项目成员机上要做的：" class="headerlink" title="项目成员机上要做的："></a>项目成员机上要做的：</h3><p>生成本机的ssh-keygen：直接运行 ssh-keygen ，回车，回车。生成的密钥会在window下: “C:\Documents and Settings\userName.ssh”，有两个文件，复制id_rsa.pub的内容给服务器管理员（邮件或直接QQ吧！）。<br>轮到服务器管理员：在.ssh文件夹下建立 id_rsa.pub 文件 ， 或直接：cat ~/opt/.ssh/id_rsa.pub 加成员的id_rsa.pub内容 （反正添加到这个文件后面就可以）<br>下面小组成员应该可以正常访问服务器了（对了，在此之前，需要安装ssh服务器 ： apt-get install ssh）<br>项目组老大要做的：<br>     <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.做一个基本项目原型，供项目成员克隆下载 ， 将已有文件推送到git服务器上</span><br><span class="line">2.新建文件夹，git init 初始化git 。</span><br><span class="line">3.git add *    将所有文件加入git 监控  ，可以用git status 查看监控状态</span><br><span class="line">4.git commit -m <span class="string">"你的提交说明"</span></span><br><span class="line">5.git remote add origin git@yourServerIP:/opt/git/project.git    (这里是将远程git服务器命名成origin，方便以后使用，名字随便改)</span><br><span class="line">6.推送到服务器   git push origin master   意思是 : git 推送 到  服务器目录 哪个分支—master 。 至此，完毕。</span><br></pre></td></tr></table></figure></p>
 <pre><code>(-a -m -am/添加 提交 添加提交;git add . 第一次提交除了删除文件全部添加)
-</code></pre><p>项目成员基本步骤：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.git <span class="built_in">clone</span> git@serverIP:/opt/git/project.git     完成仓库克隆工作</div><div class="line">2.做该做的事，</div><div class="line">3.git commit -a -m <span class="string">"你的提交说明"</span></div><div class="line">4.git remote add origin git@yourServerIP:/opt/git/project.git</div><div class="line">5.git push origin master 上传分支。</div></pre></td></tr></table></figure></p>
+</code></pre><p>项目成员基本步骤：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.git <span class="built_in">clone</span> git@serverIP:/opt/git/project.git     完成仓库克隆工作</span><br><span class="line">2.做该做的事，</span><br><span class="line">3.git commit -a -m <span class="string">"你的提交说明"</span></span><br><span class="line">4.git remote add origin git@yourServerIP:/opt/git/project.git</span><br><span class="line">5.git push origin master 上传分支。</span><br></pre></td></tr></table></figure></p>
 <p>当然，还有更多的分支使用技巧…请参考以下书籍：<br>Pro.Git-zh_CN<br>还有一本：<br>Git Community Book 中文版<br> 下面是本人在使用git过程遇到的问题：</p>
-<p>git服务器把文件藏在哪了呢？<br>答：在objects文件夹下。查看文件的方式：不用进入目录下，直接用git cat-file -p 短目录名（如0e）+文件名前n位即可<br>——————————————————————————————————————<br>在本地新建dev分支<br>git branch dev<br>git checkout dev<br>然后建立联系<br>git push -u origin dev<br>————————————<br>参考文章：<a href="http://www.ossxp.com/doc/git/gitolite.html" target="_blank" rel="external">http://www.ossxp.com/doc/git/gitolite.html</a></p>
-<p>原文: <a href="http://www.cnblogs.com/trying/archive/2012/06/28/2863758.html" target="_blank" rel="external">http://www.cnblogs.com/trying/archive/2012/06/28/2863758.html</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git本地版本控制</div><div class="line">git init</div><div class="line">添加exclude</div><div class="line">git add .</div><div class="line">git commit -m <span class="string">"first commit"</span></div></pre></td></tr></table></figure>
+<p>git服务器把文件藏在哪了呢？<br>答：在objects文件夹下。查看文件的方式：不用进入目录下，直接用git cat-file -p 短目录名（如0e）+文件名前n位即可<br>——————————————————————————————————————<br>在本地新建dev分支<br>git branch dev<br>git checkout dev<br>然后建立联系<br>git push -u origin dev<br>————————————<br>参考文章：<a href="http://www.ossxp.com/doc/git/gitolite.html" target="_blank" rel="noopener">http://www.ossxp.com/doc/git/gitolite.html</a></p>
+<p>原文: <a href="http://www.cnblogs.com/trying/archive/2012/06/28/2863758.html" target="_blank" rel="noopener">http://www.cnblogs.com/trying/archive/2012/06/28/2863758.html</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git本地版本控制</span><br><span class="line">git init</span><br><span class="line">添加exclude</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"first commit"</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -286,18 +287,18 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/25/mobile/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2017/09/03/blogurl/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mobile
+          blogurl
         
       </div>
     </a>
   
   
-    <a href="/fullstack/2017/09/03/blogurl/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">blogurl</div>
+    <a href="/fullstack/2017/09/03/js-下载拖动/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浮动下载拖动</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -356,7 +357,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Estelle
+    		&copy; 2020 Estelle
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

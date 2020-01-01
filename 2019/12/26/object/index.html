@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>blogurl | myblog</title>
+  <title>object | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="视频教程：12TMOOC:http://tmooc.cn/web/index_new.html?tedu慕课：">
-<meta name="keywords" content="Notes">
+  <meta name="description" content="遍历对象其实for..in操作的主要目的就是遍历对象的属性，如果只需要获取对象的实例属性，可以使用hasOwnProperty()进行过滤。12345678910111213141516171819202122function Person(name, age) &amp;#123;  this.name = name;  this.age = age;&amp;#125;Person.prototype.get">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="blogurl">
-<meta property="og:url" content="//qingfenger.github.io/2017/09/03/blogurl/index.html">
+<meta property="og:title" content="object">
+<meta property="og:url" content="//qingfenger.github.io/2019/12/26/object/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="视频教程：12TMOOC:http://tmooc.cn/web/index_new.html?tedu慕课：">
+<meta property="og:description" content="遍历对象其实for..in操作的主要目的就是遍历对象的属性，如果只需要获取对象的实例属性，可以使用hasOwnProperty()进行过滤。12345678910111213141516171819202122function Person(name, age) &amp;#123;  this.name = name;  this.age = age;&amp;#125;Person.prototype.get">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-09-26T05:08:32.074Z">
+<meta property="og:updated_time" content="2019-12-26T02:34:45.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blogurl">
-<meta name="twitter:description" content="视频教程：12TMOOC:http://tmooc.cn/web/index_new.html?tedu慕课：">
+<meta name="twitter:title" content="object">
+<meta name="twitter:description" content="遍历对象其实for..in操作的主要目的就是遍历对象的属性，如果只需要获取对象的实例属性，可以使用hasOwnProperty()进行过滤。12345678910111213141516171819202122function Person(name, age) &amp;#123;  this.name = name;  this.age = age;&amp;#125;Person.prototype.get">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -155,29 +155,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-blogurl" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-object" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      blogurl
+      object
     </h1>
   
 
         
-        <a href="/fullstack/2017/09/03/blogurl/" class="archive-article-date">
-  	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
+        <a href="/fullstack/2019/12/26/object/" class="archive-article-date">
+  	<time datetime="2019-12-26T01:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>视频教程：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TMOOC:http://tmooc.cn/web/index_new.html?tedu</span><br><span class="line">慕课：</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>博客：<br>CSDN<br>博客园<br>开源中国<br>51CTO<br>Iteye<br>ITPUB技术论坛<br>pudn开发<br>**懒人建站：<a href="http://www.51xuediannao.com/tags.php" target="_blank" rel="noopener">http://www.51xuediannao.com/tags.php</a><br>ITEye：<a href="http://www.iteye.com/" target="_blank" rel="noopener">http://www.iteye.com/</a>  qingfenger<br>极客博客：<a href="http://www.gbtags.com/technology/javascript/20140317-code-replayer-ladda-ui/" target="_blank" rel="noopener">http://www.gbtags.com/technology/javascript/20140317-code-replayer-ladda-ui/</a><br>jquery插件：<a href="http://www.jq-school.com/Article.aspx?kid=57" target="_blank" rel="noopener">http://www.jq-school.com/Article.aspx?kid=57</a><br>sap中文学习网：<a href="http://www.wysap.com/index.html" target="_blank" rel="noopener">http://www.wysap.com/index.html</a><br>前端：<a href="http://www.w3cfuns.com/" target="_blank" rel="noopener">http://www.w3cfuns.com/</a><br>点滴积累：<a href="http://www.cnblogs.com/Quains/archive/2011/04/12/2013121.html" target="_blank" rel="noopener">http://www.cnblogs.com/Quains/archive/2011/04/12/2013121.html</a><br>传智播客:<a href="http://www.itcast.cn/ios//subject/ioszl/index.shtml?from=wangmeng=biancheng" target="_blank" rel="noopener">http://www.itcast.cn/ios//subject/ioszl/index.shtml?from=wangmeng=biancheng</a></p>
+        <p><strong>遍历对象</strong><br>其实for..in操作的主要目的就是遍历对象的属性，如果只需要获取对象的实例属性，可以使用hasOwnProperty()进行过滤。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function Person(name, age) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.getName = function() &#123;</span><br><span class="line">  return this.name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 实例化</span><br><span class="line">var jenemy = new Person(&apos;jenemy&apos;, 25);</span><br><span class="line"></span><br><span class="line">for (var prop in Person) &#123;</span><br><span class="line">  console.log(prop); // name age getName</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var hasOwn = Object.prototype.hasOwnProperty;</span><br><span class="line">for (var prop2 in jenemy) &#123;</span><br><span class="line">  if (hasOwn.call(jenemy, prop2)) &#123;</span><br><span class="line">    console.log(prop2); // name age</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Object.keys()</strong><br>Object.keys()用于获取对象自身所有的可枚举的属性值，但不包括原型中的属性，然后返回一个由属性名组成的数组。注意它同for..in一样不能保证属性按对象原来的顺序输出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 遍历数组</span><br><span class="line">var colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</span><br><span class="line">colors.length = 10;</span><br><span class="line">colors.push(&apos;yellow&apos;);</span><br><span class="line">Array.prototype.demo = function () &#123;&#125;;</span><br><span class="line"></span><br><span class="line">Object.keys(colors); // 0 1 2 10</span><br><span class="line"></span><br><span class="line">// 遍历对象</span><br><span class="line">function Person(name, age) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.demo = function() &#123;&#125;;</span><br><span class="line"></span><br><span class="line">var jenemy = new Person(&apos;jenemy&apos;, 25);</span><br><span class="line"></span><br><span class="line">Object.keys(jenemy); // name age</span><br></pre></td></tr></table></figure></p>
+<p><strong>Object.getOwnPropertyNames()</strong><br>Object.getOwnPropertyNames()方法返回对象的所有自身属性的属性名（包括不可枚举的属性）组成的数组，但不会获取原型链上的属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function A(a,aa) &#123;</span><br><span class="line">  this.a = a;</span><br><span class="line">  this.aa = aa;</span><br><span class="line">  this.getA = function() &#123;</span><br><span class="line">    return this.a;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 原型方法</span><br><span class="line">A.prototype.aaa = function () &#123;&#125;;</span><br><span class="line"></span><br><span class="line">var B = new A(&apos;b&apos;, &apos;bb&apos;);</span><br><span class="line">B.myMethodA = function() &#123;&#125;;</span><br><span class="line">// 不可枚举方法</span><br><span class="line">Object.defineProperty(B, &apos;myMethodB&apos;, &#123;</span><br><span class="line">  enumerable: false,</span><br><span class="line">  value: function() &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Object.getOwnPropertyNames(B); // [&quot;a&quot;, &quot;aa&quot;, &quot;getA&quot;, &quot;myMethodA&quot;, &quot;myMethodB&quot;]</span><br></pre></td></tr></table></figure></p>
+<p><strong>补充for..of</strong><br>for..of为ES6新增的方法，主要来遍历可迭代的对象（包括Array, Map, Set, arguments等），它主要用来获取对象的属性值，而for..in主要获取对象的属性名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</span><br><span class="line">colors.length = 5;</span><br><span class="line">colors.push(&apos;yellow&apos;);</span><br><span class="line"></span><br><span class="line">for (var i in colors) &#123;</span><br><span class="line">  console.log(colors[i]); // red green blue yellow</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (var j of colors) &#123;</span><br><span class="line">  console.log(j); // red green blue undefined undefined yellow</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到使用for..of可以输出包括数组中不存在的值在内的所有值。<br>其实除了使用for..of直接获取属性值外，我们也可以利用Array.prototype.forEach()来达到同样的目的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</span><br><span class="line">colors.foo = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">Object.keys(colors).forEach(function(elem, index) &#123;</span><br><span class="line">  console.log(colors[elem]); // red green blue hello</span><br><span class="line">  console.log(colors[index]); // red green blue undefined</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">colors.forEach(function(elem, index) &#123;</span><br><span class="line">  console.log(elem); // red green blue</span><br><span class="line">  console.log(index); // 0 1 2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>总结</strong><br>其实这几个方法之间的差异主要在属性是否可可枚举，是来自原型，还是实例。<br>|—————————|:———-:|:———————————–:|<br>| 方法                        | 适用范围    |    描述|<br>| for..in                    | 数组，对象  |    获取可枚举的实例和原型属性名|<br>| Object.keys()                | 数组，对象  |    返回可枚举的实例属性名组成的数组|<br>| Object.getPropertyNames()  | 数组，对象  |    返回除原型属性以外的所有属性（包括不可枚举的属性）名组成的数组|<br>| for..of                    | 可迭代对象(Array, Map, Set, arguments等) | 返回属性值|</p>
+<p>参考： <a href="https://www.cnblogs.com/wujie520303/p/4931384.html" target="_blank" rel="noopener">博客</a></p>
 
       
 
@@ -212,7 +216,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Notes</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -268,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/03/blogurl/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2019/12/26/object/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,18 +286,18 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/25/mobile/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2019/12/29/objectAttributes/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mobile
+          object attributes
         
       </div>
     </a>
   
   
-    <a href="/fullstack/2017/09/03/git/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git</div>
+    <a href="/fullstack/2019/12/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -332,7 +336,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//qingfenger.github.io/fullstack/2017/09/03/blogurl/",
+  id: "//qingfenger.github.io/fullstack/2019/12/26/object/",
   owner: '13749686',
   repo: 'https://qingfenger.github.io/fullstack/',
   oauth: {

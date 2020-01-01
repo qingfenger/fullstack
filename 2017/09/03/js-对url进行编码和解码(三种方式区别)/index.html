@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
   <title>js对url进行编码和解码（三种方式区别） | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="** 只有 0-9[a-Z] $ - _ . + !  ‘ ( ) , 以及某些保留字，才能不经过编码直接用于 URL。 *例如：搜索的中文关键字，复制网址之后再粘贴就会发现该URL已经被转码。 1.escape 和 unescape 原理：对除ASCII字母、数字、标点符号 @  *  _  +  -  .  / 以外的其他字符进行编码。 编码：escape(‘http://www.baidu.">
+  <meta name="description" content="** 只有 0-9[a-Z] $ - _ . + !  ‘ ( ) , 以及某些保留字，才能不经过编码直接用于 URL。 ***例如：搜索的中文关键字，复制网址之后再粘贴就会发现该URL已经被转码。 1.escape 和 unescape 原理：对除ASCII字母、数字、标点符号 @  *  _  +  -  .  / 以外的其他字符进行编码。 编码：escape(‘http://www.baid">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js对url进行编码和解码（三种方式区别）">
 <meta property="og:url" content="//qingfenger.github.io/2017/09/03/js-对url进行编码和解码(三种方式区别)/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="** 只有 0-9[a-Z] $ - _ . + !  ‘ ( ) , 以及某些保留字，才能不经过编码直接用于 URL。 *例如：搜索的中文关键字，复制网址之后再粘贴就会发现该URL已经被转码。 1.escape 和 unescape 原理：对除ASCII字母、数字、标点符号 @  *  _  +  -  .  / 以外的其他字符进行编码。 编码：escape(‘http://www.baidu.">
+<meta property="og:description" content="** 只有 0-9[a-Z] $ - _ . + !  ‘ ( ) , 以及某些保留字，才能不经过编码直接用于 URL。 ***例如：搜索的中文关键字，复制网址之后再粘贴就会发现该URL已经被转码。 1.escape 和 unescape 原理：对除ASCII字母、数字、标点符号 @  *  _  +  -  .  / 以外的其他字符进行编码。 编码：escape(‘http://www.baid">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-06-05T08:46:56.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js对url进行编码和解码（三种方式区别）">
-<meta name="twitter:description" content="** 只有 0-9[a-Z] $ - _ . + !  ‘ ( ) , 以及某些保留字，才能不经过编码直接用于 URL。 *例如：搜索的中文关键字，复制网址之后再粘贴就会发现该URL已经被转码。 1.escape 和 unescape 原理：对除ASCII字母、数字、标点符号 @  *  _  +  -  .  / 以外的其他字符进行编码。 编码：escape(‘http://www.baidu.">
+<meta name="twitter:description" content="** 只有 0-9[a-Z] $ - _ . + !  ‘ ( ) , 以及某些保留字，才能不经过编码直接用于 URL。 ***例如：搜索的中文关键字，复制网址之后再粘贴就会发现该URL已经被转码。 1.escape 和 unescape 原理：对除ASCII字母、数字、标点符号 @  *  _  +  -  .  / 以外的其他字符进行编码。 编码：escape(‘http://www.baid">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -37,7 +38,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -175,29 +176,29 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><em>** 只有 0-9[a-Z] $ - _ . + ! </em> ‘ ( ) , 以及某些保留字，才能不经过编码直接用于 URL。</p>
-<p><em>*</em>例如：搜索的中文关键字，复制网址之后再粘贴就会发现该URL已经被转码。</p>
+<p>***例如：搜索的中文关键字，复制网址之后再粘贴就会发现该URL已经被转码。</p>
 <p>1.escape 和 unescape</p>
 <p>原理：对除ASCII字母、数字、标点符号 @  *  _  +  -  .  / 以外的其他字符进行编码。</p>
-<p>编码：escape(‘<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1" target="_blank" rel="external">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1</a>‘)</p>
-<p>　　　结果：”http%3A//www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1”</p>
+<p>编码：escape(‘<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&#39;" target="_blank" rel="noopener">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&#39;</a>)</p>
+<p>　　　结果：”http%3A//<a href="http://www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1&quot;" target="_blank" rel="noopener">www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1&quot;</a></p>
 <p>　　　escape(‘张’)</p>
 <p>　　　结果：”%u5F20”</p>
-<p>解码：unescape(“http%3A//www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1”)</p>
-<p>　　　结果：”<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1" target="_blank" rel="external">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1</a>“</p>
+<p>解码：unescape(“http%3A//<a href="http://www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1&quot;" target="_blank" rel="noopener">www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1&quot;</a>)</p>
+<p>　　　结果：”<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&quot;" target="_blank" rel="noopener">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&quot;</a></p>
 <p>　　　unescape(“%u5F20”)</p>
 <p>　　　结果：”张”</p>
 <p>2.encodeURI 和 decodeURI</p>
 <p>原理：返回编码为有效的统一资源标识符 (URI) 的字符串，不会被编码的字符：! @ # $ &amp; * ( ) = : / ; ? + ‘</p>
 <p>　　   encodeURI()是Javascript中真正用来对URL编码的函数。</p>
-<p>编码：encodeURI(‘<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1" target="_blank" rel="external">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1</a>‘)</p>
-<p>　　　结果：”<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1" target="_blank" rel="external">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1</a>“</p>
-<p>解码：decodeURI(“http%3A//www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1”)</p>
-<p>　　　结果：”http%3A//www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1”</p>
+<p>编码：encodeURI(‘<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&#39;" target="_blank" rel="noopener">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&#39;</a>)</p>
+<p>　　　结果：”<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&quot;" target="_blank" rel="noopener">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&quot;</a></p>
+<p>解码：decodeURI(“http%3A//<a href="http://www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1&quot;" target="_blank" rel="noopener">www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1&quot;</a>)</p>
+<p>　　　结果：”http%3A//<a href="http://www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1&quot;" target="_blank" rel="noopener">www.baidu.com%3Fname%3Dzhang@xiao@jie%26order%3D1&quot;</a></p>
 <p>3.encodeURIComponent 和 decodeURIComponent</p>
 <p>原理：对URL的组成部分进行个别编码，而不用于对整个URL进行编码</p>
-<p>编码：encodeURIComponent(‘<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1" target="_blank" rel="external">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1</a>‘)<br>　　　结果：”http%3A%2F%2Fwww.baidu.com%3Fname%3Dzhang%40xiao%40jie%26order%3D1”</p>
-<p>解码：decodeURIComponent(“http%3A%2F%2Fwww.baidu.com%3Fname%3Dzhang%40xiao%40jie%26order%3D1”)</p>
-<p>　　　“<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1" target="_blank" rel="external">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1</a>“</p>
+<p>编码：encodeURIComponent(‘<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&#39;" target="_blank" rel="noopener">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&#39;</a>)<br>　　　结果：”http%3A%2F%2F<a href="http://www.baidu.com%3Fname%3Dzhang%40xiao%40jie%26order%3D1&quot;" target="_blank" rel="noopener">www.baidu.com%3Fname%3Dzhang%40xiao%40jie%26order%3D1&quot;</a></p>
+<p>解码：decodeURIComponent(“http%3A%2F%2F<a href="http://www.baidu.com%3Fname%3Dzhang%40xiao%40jie%26order%3D1&quot;" target="_blank" rel="noopener">www.baidu.com%3Fname%3Dzhang%40xiao%40jie%26order%3D1&quot;</a>)</p>
+<p>　　　“<a href="http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&quot;" target="_blank" rel="noopener">http://www.baidu.com?name=zhang@xiao@jie&amp;order=1&quot;</a></p>
 
       
 
@@ -312,8 +313,8 @@
     </a>
   
   
-    <a href="/fullstack/2017/09/03/notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">note</div>
+    <a href="/fullstack/2017/09/03/js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -372,7 +373,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Estelle
+    		&copy; 2020 Estelle
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

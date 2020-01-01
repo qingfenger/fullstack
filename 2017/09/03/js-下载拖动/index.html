@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
   <title>浮动下载拖动 | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,8 @@
 <meta property="og:url" content="//qingfenger.github.io/2017/09/03/js-下载拖动/index.html">
 <meta property="og:site_name" content="myblog">
 <meta property="og:description" content="浮动下载拖动12345678910111213141516171819202122232425262728if(document.querySelector(&quot;.excel_float&quot;))&amp;#123;    var excel_float=document.querySelector(&quot;.excel_float&quot;);    excel_float.addEventListener(&apos;touchm">
-<meta property="og:updated_time" content="2018-06-08T06:41:27.325Z">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-08T06:41:27.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浮动下载拖动">
 <meta name="twitter:description" content="浮动下载拖动12345678910111213141516171819202122232425262728if(document.querySelector(&quot;.excel_float&quot;))&amp;#123;    var excel_float=document.querySelector(&quot;.excel_float&quot;);    excel_float.addEventListener(&apos;touchm">
@@ -37,7 +38,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -174,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>浮动下载拖动</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(document.querySelector(<span class="string">".excel_float"</span>))&#123;</div><div class="line">    var excel_float=document.querySelector(<span class="string">".excel_float"</span>);</div><div class="line">    excel_float.addEventListener(<span class="string">'touchmove'</span>,touchmoveFun,<span class="literal">false</span>);</div><div class="line">    excel_float.addEventListener(<span class="string">"touchend"</span>,touchendFun,<span class="literal">false</span>);</div><div class="line">    <span class="keyword">function</span> touchmoveFun(evt)&#123;</div><div class="line">        evt.preventDefault();//阻止触摸时浏览器的缩放、滚动条等</div><div class="line">        var touch=evt.touches[0];//获取第一个触点</div><div class="line">        var x=Number(touch.pageX);//页面触点X坐标</div><div class="line">        var y=Number(touch.pageY);//页面触点Y坐标</div><div class="line">        var width=excel_float.offsetWidth;</div><div class="line">        var halfWidth=parseFloat(width)*0.5;</div><div class="line">        var moveX=x-halfWidth;</div><div class="line">        var moveY=y-halfWidth;</div><div class="line">        var moveBx=x+halfWidth;</div><div class="line">        var moveBy=y+halfWidth;</div><div class="line">        var screenScroll=document.documentElement.scrollTop  || document.body.scrollTop;</div><div class="line">        var screenwidth = document.documentElement.clientWidth || document.body.clientWidth;</div><div class="line">        var muicontentwidth=document.querySelector(<span class="string">".mui-content"</span>).offsetWidth;</div><div class="line">        var screenheight = document.documentElement.clientHeight || document.body.clientHeight;</div><div class="line">        <span class="keyword">if</span>(moveX&gt;0 &amp;&amp; moveBx&lt;screenwidth &amp;&amp; moveY&gt;0 &amp;&amp; moveBy&lt;screenheight+screenScroll)&#123;</div><div class="line">            excel_float.style.left=x-halfWidth+<span class="string">'px'</span>;</div><div class="line">            excel_float.style.top=y-halfWidth-screenScroll+<span class="string">'px'</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">function</span> touchendFun(evt)&#123;</div><div class="line">        //element.removeEventListener(<span class="built_in">type</span>，handler，<span class="literal">false</span>/<span class="literal">true</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p><strong>浮动下载拖动</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(document.querySelector(<span class="string">".excel_float"</span>))&#123;</span><br><span class="line">    var excel_float=document.querySelector(<span class="string">".excel_float"</span>);</span><br><span class="line">    excel_float.addEventListener(<span class="string">'touchmove'</span>,touchmoveFun,<span class="literal">false</span>);</span><br><span class="line">    excel_float.addEventListener(<span class="string">"touchend"</span>,touchendFun,<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">function</span> touchmoveFun(evt)&#123;</span><br><span class="line">        evt.preventDefault();//阻止触摸时浏览器的缩放、滚动条等</span><br><span class="line">        var touch=evt.touches[0];//获取第一个触点</span><br><span class="line">        var x=Number(touch.pageX);//页面触点X坐标</span><br><span class="line">        var y=Number(touch.pageY);//页面触点Y坐标</span><br><span class="line">        var width=excel_float.offsetWidth;</span><br><span class="line">        var halfWidth=parseFloat(width)*0.5;</span><br><span class="line">        var moveX=x-halfWidth;</span><br><span class="line">        var moveY=y-halfWidth;</span><br><span class="line">        var moveBx=x+halfWidth;</span><br><span class="line">        var moveBy=y+halfWidth;</span><br><span class="line">        var screenScroll=document.documentElement.scrollTop  || document.body.scrollTop;</span><br><span class="line">        var screenwidth = document.documentElement.clientWidth || document.body.clientWidth;</span><br><span class="line">        var muicontentwidth=document.querySelector(<span class="string">".mui-content"</span>).offsetWidth;</span><br><span class="line">        var screenheight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">        <span class="keyword">if</span>(moveX&gt;0 &amp;&amp; moveBx&lt;screenwidth &amp;&amp; moveY&gt;0 &amp;&amp; moveBy&lt;screenheight+screenScroll)&#123;</span><br><span class="line">            excel_float.style.left=x-halfWidth+<span class="string">'px'</span>;</span><br><span class="line">            excel_float.style.top=y-halfWidth-screenScroll+<span class="string">'px'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> touchendFun(evt)&#123;</span><br><span class="line">        //element.removeEventListener(<span class="built_in">type</span>，handler，<span class="literal">false</span>/<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -279,11 +280,11 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/03/blogurl/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2017/09/03/git/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          blogurl
+          git
         
       </div>
     </a>
@@ -349,7 +350,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Estelle
+    		&copy; 2020 Estelle
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
