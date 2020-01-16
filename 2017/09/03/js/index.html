@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="//qingfenger.github.io">
   <title>js | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="昨天日期：    function GetDateStr(AddDayCount) {        var dd = new Date();        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期        var y = dd.getFullYear();        var m = dd.getMonth()+1">
+  <meta name="description" content="defer与async的区别是：defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。    昨天日期：    function GetDateStr(AddDayCount) {        var dd">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js">
 <meta property="og:url" content="//qingfenger.github.io/2017/09/03/js/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="昨天日期：    function GetDateStr(AddDayCount) {        var dd = new Date();        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期        var y = dd.getFullYear();        var m = dd.getMonth()+1">
+<meta property="og:description" content="defer与async的区别是：defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。    昨天日期：    function GetDateStr(AddDayCount) {        var dd">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-05T09:35:25.502Z">
+<meta property="og:updated_time" content="2020-01-16T12:38:20.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
-<meta name="twitter:description" content="昨天日期：    function GetDateStr(AddDayCount) {        var dd = new Date();        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期        var y = dd.getFullYear();        var m = dd.getMonth()+1">
+<meta name="twitter:description" content="defer与async的区别是：defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。    昨天日期：    function GetDateStr(AddDayCount) {        var dd">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -175,7 +175,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>昨天日期：<br>    function GetDateStr(AddDayCount) {<br>        var dd = new Date();<br>        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期<br>        var y = dd.getFullYear();<br>        var m = dd.getMonth()+1;//获取当前月份的日期<br>        var d = dd.getDate();<br>        return y+”-“+m+”-“+d;<br>    }<br>    console.log(“<br>昨天：”+GetDateStr(-1));<br><a id="more"></a><br><strong>函数返回值</strong><br>    function Test() {<br>        　　this.name = ‘Test’;<br>        　　return ‘Test’;<br>    }<br>    var fnT = Test();<br>    console.log(fnT);<br>    var newT = new Test();<br>    console.log(newT);<br>    如果函数返回值为常规意义上的值类型（Number、String、Boolean）时，new函数将会返回一个该函数的实例对象，而如果函数返回一个引用类型（Object、Array、Function），则new函数与直接调用函数产生的结果等同。</p>
+        <p><strong><em>defer与async的区别是：</em></strong><br>defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。</p>
+<script src="e.js" defer></script>
+<script src="e.js" async></script>
+
+<p>昨天日期：<br>    function GetDateStr(AddDayCount) {<br>        var dd = new Date();<br>        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期<br>        var y = dd.getFullYear();<br>        var m = dd.getMonth()+1;//获取当前月份的日期<br>        var d = dd.getDate();<br>        return y+”-“+m+”-“+d;<br>    }<br>    console.log(“<br>昨天：”+GetDateStr(-1));<br><a id="more"></a><br><strong>函数返回值</strong><br>    function Test() {<br>        　　this.name = ‘Test’;<br>        　　return ‘Test’;<br>    }<br>    var fnT = Test();<br>    console.log(fnT);<br>    var newT = new Test();<br>    console.log(newT);<br>    如果函数返回值为常规意义上的值类型（Number、String、Boolean）时，new函数将会返回一个该函数的实例对象，而如果函数返回一个引用类型（Object、Array、Function），则new函数与直接调用函数产生的结果等同。</p>
 <pre><code>{% asset_img 1.jpg %}
 </code></pre><hr>
 <h2 id="jquery包含div本身：-“-test”-prop-“outerHTML”"><a href="#jquery包含div本身：-“-test”-prop-“outerHTML”" class="headerlink" title="jquery包含div本身：$(“.test”).prop(“outerHTML”);"></a>jquery包含div本身：$(“.test”).prop(“outerHTML”);</h2><p>$(“.checktype input:radio:checked”).each(function(index,elem){<br>    typeArray.push( $(elem).val());//选中的内容数组<br>});    </p>
@@ -301,18 +305,18 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/03/js-对url进行编码和解码(三种方式区别)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2017/09/03/git/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          js对url进行编码和解码（三种方式区别）
+          git
         
       </div>
     </a>
   
   
-    <a href="/fullstack/2017/09/03/notes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">note</div>
+    <a href="/fullstack/2017/09/03/js-下载拖动/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浮动下载拖动</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -454,6 +458,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Notes</a>
               </li>
              
@@ -467,10 +475,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">

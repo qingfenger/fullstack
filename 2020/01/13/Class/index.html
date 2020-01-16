@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>tool | myblog</title>
+  <title>Class | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css3 标签兼容：http://caniuse.com/">
-<meta name="keywords" content="Tool">
+  <meta name="description" content="ES6 类ClassES6定义类123456789101112class Person&amp;#123;   constructor(name,age)&amp;#123;   this.name=name;   this.age=age;   &amp;#125;   sayHi()&amp;#123;     console.log(&amp;quot;es6 say hi&amp;quot;);   &amp;#125;&amp;#125;let p=">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tool">
-<meta property="og:url" content="//qingfenger.github.io/2017/09/25/tool/index.html">
+<meta property="og:title" content="Class">
+<meta property="og:url" content="//qingfenger.github.io/2020/01/13/Class/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="css3 标签兼容：http://caniuse.com/">
+<meta property="og:description" content="ES6 类ClassES6定义类123456789101112class Person&amp;#123;   constructor(name,age)&amp;#123;   this.name=name;   this.age=age;   &amp;#125;   sayHi()&amp;#123;     console.log(&amp;quot;es6 say hi&amp;quot;);   &amp;#125;&amp;#125;let p=">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-09-26T05:04:08.133Z">
+<meta property="og:updated_time" content="2020-01-16T02:39:28.683Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tool">
-<meta name="twitter:description" content="css3 标签兼容：http://caniuse.com/">
+<meta name="twitter:title" content="Class">
+<meta name="twitter:description" content="ES6 类ClassES6定义类123456789101112class Person&amp;#123;   constructor(name,age)&amp;#123;   this.name=name;   this.age=age;   &amp;#125;   sayHi()&amp;#123;     console.log(&amp;quot;es6 say hi&amp;quot;);   &amp;#125;&amp;#125;let p=">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -155,27 +155,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-tool" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Class" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tool
+      Class
     </h1>
   
 
         
-        <a href="/fullstack/2017/09/25/tool/" class="archive-article-date">
-  	<time datetime="2017-09-25T07:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
+        <a href="/fullstack/2020/01/13/Class/" class="archive-article-date">
+  	<time datetime="2020-01-13T11:11:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>css3 标签兼容：<a href="http://caniuse.com/" target="_blank" rel="noopener">http://caniuse.com/</a></p>
+        <p><strong><em>ES6 类Class</em></strong><br>ES6定义类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">   constructor(name,age)&#123;</span><br><span class="line">   this.name=name;</span><br><span class="line">   this.age=age;</span><br><span class="line">   &#125;</span><br><span class="line">   sayHi()&#123;</span><br><span class="line">     console.log(&quot;es6 say hi&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">let p=new Person(&quot;张三&quot;,18);</span><br><span class="line">console.log(p);</span><br><span class="line">p.sayHi();</span><br></pre></td></tr></table></figure></p>
+<p>ES3写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">   this.name=name;</span><br><span class="line">   this.age=age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi=function()&#123;</span><br><span class="line">console.log(&quot;es3 say Hi&quot;);</span><br><span class="line">&#125;</span><br><span class="line">let p=new Person(&quot;张三&quot;,18);</span><br><span class="line">console.log(p);</span><br><span class="line">p.sayHi();</span><br></pre></td></tr></table></figure></p>
+<p>定义类的静态方法和静态属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Pointer()&#123;</span><br><span class="line"> static showDefault()&#123;</span><br><span class="line">    console.log(&quot;静态方法&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> showDefault()&#123;</span><br><span class="line">    console.log(&quot;实例方法&quot;);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">Pointer.attr=[0,1];</span><br><span class="line">let p=new Pointer();</span><br><span class="line">p.showDefault();//实例方法</span><br><span class="line">Pointer.showDefault();//静态方法</span><br><span class="line">console.log(Pointer.attr);</span><br></pre></td></tr></table></figure></p>
+<p>继承的使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">    constructor(name,age)&#123;</span><br><span class="line">        this.name=name;</span><br><span class="line">        this.age=age;</span><br><span class="line">    &#125;</span><br><span class="line">    sayHi()&#123;</span><br><span class="line">        console.log(&quot;es6 say hi&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Superman extends Person&#123;</span><br><span class="line">    constructor(name,age,power)&#123;</span><br><span class="line">        super(name,age);</span><br><span class="line">        super.sayHi();//子类初始化时便执行此方法</span><br><span class="line">        this.power=power;</span><br><span class="line">    &#125;</span><br><span class="line">    usePower()&#123;</span><br><span class="line">        console.log(`show me the $&#123;this.power&#125;`);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let sm=new SuperMan(&quot;李四&quot;,19,&quot;dance&quot;);//es6 say hi</span><br><span class="line">sm.sayHi();//es6 say hi</span><br><span class="line">sm.usePower();//show me the dance</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -210,7 +213,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tool</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -266,7 +269,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/25/tool/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2020/01/13/Class/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +283,18 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/26/node/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2020/01/13/test/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          node.js
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/fullstack/2017/09/25/mobile/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mobile</div>
+    <a href="/fullstack/2020/01/11/cssAtrributes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">cssAtrributes</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -330,7 +333,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//qingfenger.github.io/fullstack/2017/09/25/tool/",
+  id: "//qingfenger.github.io/fullstack/2020/01/13/Class/",
   owner: '13749686',
   repo: 'https://qingfenger.github.io/fullstack/',
   oauth: {

@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>tool | myblog</title>
+  <title>myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css3 标签兼容：http://caniuse.com/">
-<meta name="keywords" content="Tool">
+  <meta name="description" content="/**  * Created by admin on 2020/1/13.  */  class Person{     constructor(name,age){         this.name=name;         this.age=age;     }     sayHi(){         console.log(&quot;es6 say hi&quot;);     } } class Su">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tool">
-<meta property="og:url" content="//qingfenger.github.io/2017/09/25/tool/index.html">
+<meta property="og:title" content="myblog">
+<meta property="og:url" content="//qingfenger.github.io/2020/01/13/test/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="css3 标签兼容：http://caniuse.com/">
+<meta property="og:description" content="/**  * Created by admin on 2020/1/13.  */  class Person{     constructor(name,age){         this.name=name;         this.age=age;     }     sayHi(){         console.log(&quot;es6 say hi&quot;);     } } class Su">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-09-26T05:04:08.133Z">
+<meta property="og:updated_time" content="2020-01-13T12:29:57.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tool">
-<meta name="twitter:description" content="css3 标签兼容：http://caniuse.com/">
+<meta name="twitter:title" content="myblog">
+<meta name="twitter:description" content="/**  * Created by admin on 2020/1/13.  */  class Person{     constructor(name,age){         this.name=name;         this.age=age;     }     sayHi(){         console.log(&quot;es6 say hi&quot;);     } } class Su">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -155,27 +154,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-tool" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      tool
-    </h1>
-  
-
-        
-        <a href="/fullstack/2017/09/25/tool/" class="archive-article-date">
-  	<time datetime="2017-09-25T07:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>css3 标签兼容：<a href="http://caniuse.com/" target="_blank" rel="noopener">http://caniuse.com/</a></p>
+        /**
+ * Created by admin on 2020/1/13.
+ */
+
+class Person{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    sayHi(){
+        console.log("es6 say hi");
+    }
+}
+class Superman extends Person{
+    constructor(name,age,power){
+        super(name,age);
+        super.sayHi();
+        this.power=power;
+    }
+    usePower(){
+        console.log("show me the ${this.power}");
+    }
+}
+let sm=new SuperMan("李四",19,"dance");
+sm.sayHi();
+sm.usePower();
 
       
 
@@ -205,17 +214,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tool</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -266,7 +264,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/25/tool/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2020/01/13/test/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +278,18 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/26/node/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2020/01/16/generator/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          node.js
+          generator
         
       </div>
     </a>
   
   
-    <a href="/fullstack/2017/09/25/mobile/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mobile</div>
+    <a href="/fullstack/2020/01/13/Class/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Class</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -330,7 +328,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//qingfenger.github.io/fullstack/2017/09/25/tool/",
+  id: "//qingfenger.github.io/fullstack/2020/01/13/test/",
   owner: '13749686',
   repo: 'https://qingfenger.github.io/fullstack/',
   oauth: {
