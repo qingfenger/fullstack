@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>单双击判断 | myblog</title>
+  <title>arrowThis | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单双击区别123456789101112131415161718192021222324252627282930313233343536373839404142var flag = true;var	first = 0;var f_value=&apos;&apos;;var second = 0;var s_value=&apos;&apos;;myChart.on(&apos;click&apos;, function (params) &amp;#123;">
+  <meta name="description" content="箭头函数和普通函数this指向的实例理解一般理解： 箭头函数：12箭头函数的this是在定义函数时绑定的，不是在执行过程中绑定的。简单的说，函数在定义时，this就继承了定义函数的对象。　普通函数： 12this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this指向的是window；当函数被作为某个对象的方法调用时，this就等于那个对象&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;网上找的">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单双击判断">
-<meta property="og:url" content="//qingfenger.github.io/2017/09/03/js-单双击判断/index.html">
+<meta property="og:title" content="arrowThis">
+<meta property="og:url" content="//qingfenger.github.io/2020/01/16/arrowThis/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="单双击区别123456789101112131415161718192021222324252627282930313233343536373839404142var flag = true;var	first = 0;var f_value=&apos;&apos;;var second = 0;var s_value=&apos;&apos;;myChart.on(&apos;click&apos;, function (params) &amp;#123;">
+<meta property="og:description" content="箭头函数和普通函数this指向的实例理解一般理解： 箭头函数：12箭头函数的this是在定义函数时绑定的，不是在执行过程中绑定的。简单的说，函数在定义时，this就继承了定义函数的对象。　普通函数： 12this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this指向的是window；当函数被作为某个对象的方法调用时，this就等于那个对象&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;网上找的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-08T06:40:34.876Z">
+<meta property="og:updated_time" content="2020-06-28T08:28:09.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单双击判断">
-<meta name="twitter:description" content="单双击区别123456789101112131415161718192021222324252627282930313233343536373839404142var flag = true;var	first = 0;var f_value=&apos;&apos;;var second = 0;var s_value=&apos;&apos;;myChart.on(&apos;click&apos;, function (params) &amp;#123;">
+<meta name="twitter:title" content="arrowThis">
+<meta name="twitter:description" content="箭头函数和普通函数this指向的实例理解一般理解： 箭头函数：12箭头函数的this是在定义函数时绑定的，不是在执行过程中绑定的。简单的说，函数在定义时，this就继承了定义函数的对象。　普通函数： 12this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this指向的是window；当函数被作为某个对象的方法调用时，this就等于那个对象&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;网上找的">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -155,27 +155,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js-单双击判断" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-arrowThis" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      单双击判断
+      arrowThis
     </h1>
   
 
         
-        <a href="/fullstack/2017/09/03/js-单双击判断/" class="archive-article-date">
-  	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
+        <a href="/fullstack/2020/01/16/arrowThis/" class="archive-article-date">
+  	<time datetime="2020-01-16T12:39:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>单双击区别</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">var flag = <span class="literal">true</span>;</span><br><span class="line">var	first = 0;</span><br><span class="line">var f_value=<span class="string">''</span>;</span><br><span class="line">var second = 0;</span><br><span class="line">var s_value=<span class="string">''</span>;</span><br><span class="line">myChart.on(<span class="string">'click'</span>, <span class="keyword">function</span> (params) &#123;</span><br><span class="line">	isclick(params);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">function</span> isclick(p)&#123;</span><br><span class="line">	var date = new Date();</span><br><span class="line">	var pa_name=p.name;</span><br><span class="line">	var one = date.getTime();</span><br><span class="line">	<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">		first = one;</span><br><span class="line">		f_value=pa_name;</span><br><span class="line">		flag = <span class="literal">false</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		second = one;</span><br><span class="line">		s_value=pa_name;</span><br><span class="line">		flag = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	var end = 0 ;</span><br><span class="line">	<span class="keyword">if</span>(second &gt; first)&#123;</span><br><span class="line">		end = second - first ;</span><br><span class="line">		<span class="keyword">if</span>(end &lt; 500  &amp;&amp; (f_value==s_value))&#123;//双击</span><br><span class="line">			var param=&#123;</span><br><span class="line">				  		code:p.data.code,</span><br><span class="line">				  		name:p.data.name,</span><br><span class="line">				  		value:p.data.value</span><br><span class="line">				  &#125;</span><br><span class="line">			var result_indate=getfdate();</span><br><span class="line">			mui.openWindow(&#123;url:<span class="string">'dspzPage.jhtml?IsRefresh=false&amp;token='</span>+initialData.token+<span class="string">'&amp;clientflag='</span>+initialData.clientflag+<span class="string">'&amp;openid='</span>+initialData.openid+<span class="string">'&amp;rowid='</span>+param.code+<span class="string">'&amp;ftdate='</span>+initialData.ftdate+<span class="string">'&amp;indate='</span>+result_indate+<span class="string">'&amp;c_date=1&amp;c_type=1&amp;datarowname='</span>+param.name+<span class="string">'&amp;provence='</span>&#125;);</span><br><span class="line"></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			first=one;</span><br><span class="line">			f_value=pa_name;</span><br><span class="line">			second=<span class="string">''</span>;</span><br><span class="line">			s_value=<span class="string">''</span>;</span><br><span class="line">			<span class="built_in">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p><strong><em>箭头函数和普通函数this指向的实例理解</em></strong><br>一般理解：</p>
+<p>箭头函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">箭头函数的this是在定义函数时绑定的，不是在执行过程中绑定的。简单的说，函数在定义时，this就继承了定义函数的对象。　</span><br><span class="line">普通函数：</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this指向的是window；当函数被作为某个对象的方法调用时，this就等于那个对象&lt;br&gt;&lt;br&gt;</span><br><span class="line">网上找的定义都很难理解。而下面的定义理解起来非常简单。</span><br></pre></td></tr></table></figure>
+<p>核心：箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this。<br><strong><em>实例函数</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var a = 20;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    a: 10,</span><br><span class="line">    b: function() &#123;</span><br><span class="line">        console.log(this.a);</span><br><span class="line">    &#125;,</span><br><span class="line">    b1:this.a,</span><br><span class="line">    c:&#123;</span><br><span class="line">        a:50,</span><br><span class="line">        fn:function()&#123;</span><br><span class="line">            console.log(this.a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    d: () =&gt; &#123;</span><br><span class="line">        console.log(this.a);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    e: function() &#123;</span><br><span class="line">        return () =&gt; &#123;</span><br><span class="line">            console.log(this.a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">obj.b();//10  //一个函数中有this，这个函数有被上一级的对象所调用，那么this指向的就是上一级的对象。this 指向 obj</span><br><span class="line">console.log(obj.b1);//20  this指向的就是上一级的对象。this指向window</span><br><span class="line">obj.c.fn();//50   一个函数中有this，尽管这个函数是被最外层的对象所调用，this指向的也只是它上一级的对象c。区分下面的方法</span><br><span class="line">var f=obj.c.fn;</span><br><span class="line">f();//20   this永远指向的是最后调用它的对象 虽然函数fn是被对象c所引用，但是在将fn赋值给变量f的时候并没有执行所以最终指向的是window</span><br><span class="line">obj.d();//20  箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this。 this 指向window</span><br><span class="line">obj.e()();//10  this指向obj 。如果有多级箭头函数嵌套()=&gt; () =&gt; () =&gt; this.a this指向第一个箭头函数的上一级对象。</span><br></pre></td></tr></table></figure></p>
+<p>总结：箭头函数没有自己的this，箭头函数中用this和普通语句中的this没什么区别，所以，你知道非箭头函数下怎么用this,就知道箭头函数下怎么用this。<br>关于 “箭头函数对this固定化，箭头函数中的this绑定定义时所在的作用域，箭头函数不能通过 call() 或 apply() 方法绑定this” 等描述，都源于箭头函数没有自己的this。</p>
+<p>例外：当this遇到retrun，如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fn()</span><br><span class="line">&#123;</span><br><span class="line">    this.user = &apos;二狗子&apos;;</span><br><span class="line">    return &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">var a = new fn;</span><br><span class="line">console.log(a.user); //undefined</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fn()</span><br><span class="line">&#123;</span><br><span class="line">    this.user = &apos;二狗子&apos;;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line">var a = new fn;</span><br><span class="line">console.log(a.user); //二狗子</span><br></pre></td></tr></table></figure>
 
       
 
@@ -266,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/03/js-单双击判断/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2020/01/16/arrowThis/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +286,9 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/03/git/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          git
-        
-      </div>
-    </a>
   
-  
-    <a href="/fullstack/2017/09/03/js-对url进行编码和解码(三种方式区别)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js对url进行编码和解码（三种方式区别）</div>
+    <a href="/fullstack/2020/01/16/module/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">module</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -330,7 +327,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//qingfenger.github.io/fullstack/2017/09/03/js-单双击判断/",
+  id: "//qingfenger.github.io/fullstack/2020/01/16/arrowThis/",
   owner: '13749686',
   repo: 'https://qingfenger.github.io/fullstack/',
   oauth: {

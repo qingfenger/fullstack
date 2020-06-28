@@ -152,6 +152,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-html" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/fullstack/2017/12/18/html/">html</a>
+    </h1>
+  
+
+        
+        <a href="/fullstack/2017/12/18/html/" class="archive-article-date">
+  	<time datetime="2017-12-18T05:16:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**上传图片**</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"file"</span>  name=<span class="string">"file_head"</span> id=<span class="string">"file_head"</span> accept=<span class="string">"image/*"</span> capture=<span class="string">"camera"</span> onchange=<span class="string">"javascript:setImagePreview();"</span> /&gt;</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"file"</span>  name=<span class="string">"file_head"</span> id=<span class="string">"file_head"</span>  accept=<span class="string">"image/gif, image/jpeg"</span> capture=<span class="string">"camera"</span> onchange=<span class="string">"javascript:setImagePreview();"</span> /&gt;</span><br><span class="line">		 **视频**</span><br><span class="line">		 &lt;input <span class="built_in">type</span>=<span class="string">"file"</span> accept=<span class="string">"video/*"</span> capture=<span class="string">"camcorder"</span>&gt;</span><br><span class="line">		 **录音**</span><br><span class="line">		 &lt;input <span class="built_in">type</span>=<span class="string">"file"</span> accept=<span class="string">"audio/*"</span> capture=<span class="string">"microphone"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p>capture表示，可以捕获到系统默认的设备，比如：camera–照相机；camcorder–摄像机；microphone–录音。<br>accept表示，直接打开系统文件目录。<br>其实html5的input:file标签还支持一个multiple属性，表示可以支持多选，如：<input type="file" accept="image/*" multiple><br>加上这个multiple后，capture就没啥用了，因为multiple是专门yong用来支持多选的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/fullstack/2017/12/18/html/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -868,82 +932,6 @@
 
 
   
-    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/fullstack/2017/09/03/git/">git</a>
-    </h1>
-  
-
-        
-        <a href="/fullstack/2017/09/03/git/" class="archive-article-date">
-  	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>当前任务，学习中… 公司小范围用法：  服务器上做的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.在服务器上建立一个用户，这里命名为git。 ubuntu下:  useradd  git —— passwd git 1 （改密码为1）</span><br><span class="line">2.找个目录，建立空仓库 git --bare init 。 ubuntu下： <span class="built_in">cd</span> /opt —— mkdir git —— git --bare init</span><br><span class="line">3.建立文件夹project.git (名字随便取，这里取project，以后别人git <span class="built_in">clone</span>时就会生成project文件夹)。</span><br><span class="line">4.再建立一个文件夹.ssh，用来存入需要访问的成员的 ssh-keygen</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/fullstack/2017/09/03/git/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/fullstack/2017/09/03/git/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/fullstack/">&laquo; Prev</a><a class="page-number" href="/fullstack/">1</a><span class="page-number current">2</span><a class="page-number" href="/fullstack/page/3/">3</a><a class="extend next" rel="next" href="/fullstack/page/3/">Next &raquo;</a>
@@ -1053,11 +1041,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
