@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>mobilefont | myblog</title>
+  <title>水平、垂直居中 | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="***字体start*雅黑字体问题虽然解决了，但也带来了影响，一来消耗用户的流量，二来对页面的打开速度造成了延迟。 总感觉不好，为了说服产品经理，找了三大手机系统的字体资料：">
-<meta name="keywords" content="Mobile">
+  <meta name="description" content="垂直居中方法123456789101112131415垂直居中/position:absolute;.parent &amp;#123;            width:800px;            height:500px;            border:2px solid #000;            display:table-cell;            vertical-a">
+<meta name="keywords" content="Css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mobilefont">
-<meta property="og:url" content="//qingfenger.github.io/2017/09/26/mobilefont/index.html">
+<meta property="og:title" content="水平、垂直居中">
+<meta property="og:url" content="//qingfenger.github.io/2017/09/26/center-css/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="***字体start*雅黑字体问题虽然解决了，但也带来了影响，一来消耗用户的流量，二来对页面的打开速度造成了延迟。 总感觉不好，为了说服产品经理，找了三大手机系统的字体资料：">
+<meta property="og:description" content="垂直居中方法123456789101112131415垂直居中/position:absolute;.parent &amp;#123;            width:800px;            height:500px;            border:2px solid #000;            display:table-cell;            vertical-a">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-09-26T05:08:14.015Z">
+<meta property="og:updated_time" content="2020-07-14T01:51:24.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mobilefont">
-<meta name="twitter:description" content="***字体start*雅黑字体问题虽然解决了，但也带来了影响，一来消耗用户的流量，二来对页面的打开速度造成了延迟。 总感觉不好，为了说服产品经理，找了三大手机系统的字体资料：">
+<meta name="twitter:title" content="水平、垂直居中">
+<meta name="twitter:description" content="垂直居中方法123456789101112131415垂直居中/position:absolute;.parent &amp;#123;            width:800px;            height:500px;            border:2px solid #000;            display:table-cell;            vertical-a">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -155,38 +155,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mobilefont" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-center-css" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mobilefont
+      水平、垂直居中
     </h1>
   
 
         
-        <a href="/fullstack/2017/09/26/mobilefont/" class="archive-article-date">
-  	<time datetime="2017-09-26T03:09:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
+        <a href="/fullstack/2017/09/26/center-css/" class="archive-article-date">
+  	<time datetime="2017-09-26T02:42:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><strong><strong><strong>***</strong></strong></strong></strong>字体start<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><br>雅黑字体问题虽然解决了，但也带来了影响，一来消耗用户的流量，二来对页面的打开速度造成了延迟。</p>
-<p>总感觉不好，为了说服产品经理，找了三大手机系统的字体资料：<br><a id="more"></a><br>ios 系统</p>
-<p>默认中文字体是Heiti SC<br>默认英文字体是Helvetica<br>默认数字字体是HelveticaNeue<br>无微软雅黑字体<br>android 系统</p>
-<p>默认中文字体是Droidsansfallback<br>默认英文和数字字体是Droid Sans<br>无微软雅黑字体<br>winphone 系统</p>
-<p>默认中文字体是Dengxian(方正等线体)<br>默认英文和数字字体是Segoe<br>无微软雅黑字体<br>附：ios7字体列表</p>
-<p>并做了个小测试，下图为测试机 iphone 4s、三星 GT-N7000 android 2.3.6、HTC windows Phone 8.0 三种手机中的默认中文字体和英文字体展现：</p>
-<p>我们可以看出三种不同的中文字体和微软雅黑一样是无衬线字体，有无衬线只是一个小原因，而无论页面中使用哪种字体，肉眼很难看出它们的差异，对产品的体验几乎没有影响。</p>
-<p>有关衬线字体和无衬线字体的差别，参考下图：</p>
-<p>那么，使用系统默认的字体所达到的视觉效果跟使用微软雅黑字体没有明显的差别，权衡利弊，最终说服了产品经理放弃使用微软雅黑的想法。</p>
-<p>结论</p>
-<p>各个手机系统有自己的默认字体，且都不支持微软雅黑<br>如无特殊需求，手机端无需定义中文字体，使用系统默认<br>英文字体和数字字体可使用 Helvetica ，三种系统都支持<br>代码：</p>
-<p>/<em> 移动端定义字体的代码 </em>/<br>body{font-family:Helvetica;}<br>一点思考，如有疑问，欢迎大家和我讨论。<br>android设备中各个浏览器都很不给力（ios的还没有测试，我想肯定也好不到哪去吧），android手机中各个浏览器支持的常用字体只有三种：<br>sans-serif(无衬线)类 : Arial; //只要设置成sans-serif类，不管什么字体，都一个样子。<br>serif(衬线)类 ：Georgia；//只要设置成serif类，不管什么字体，都一个样子。<br>monospace(等宽)类//只要设置成monospace类，不管什么字体，都一个样子。<br><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong>字体end<strong><strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong></p>
+        <p>垂直居中方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">垂直居中/position:absolute;</span><br><span class="line">.parent &#123;</span><br><span class="line">            width:800px;</span><br><span class="line">            height:500px;</span><br><span class="line">            border:2px solid <span class="comment">#000;</span></span><br><span class="line">            display:table-cell;</span><br><span class="line">            vertical-align:middle;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">.child &#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:200px;</span><br><span class="line">    display:inline-block;</span><br><span class="line">    background-color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>垂直居中：虚构一个全高的隐形的 :after 然后让图片和它居中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.pic_box&#123;</span><br><span class="line">　　width:300px;</span><br><span class="line">　　height:300px;</span><br><span class="line">　　background-color:<span class="comment">#beceeb;</span></span><br><span class="line">　　text-align:center;</span><br><span class="line">&#125;</span><br><span class="line">.pic_box img&#123;</span><br><span class="line">　　vertical-align:middle;</span><br><span class="line">&#125;</span><br><span class="line">.pic_box:after&#123;</span><br><span class="line">　　display:inline-block;</span><br><span class="line">　　width:0;</span><br><span class="line">　　height:100%;</span><br><span class="line">　　content:<span class="string">"center"</span>;</span><br><span class="line">　　vertical-align:middle;</span><br><span class="line">　　overflow:hidden;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"border:1px solid #333333;width:130px;height:80px;display:table-cell;vertical-align:middle;"</span>&gt;</span><br><span class="line">  &lt;div&gt;垂直居中table-cell&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div style=<span class="string">"border:1px solid #333333;width:130px;height:80px;display:flex;align-items:center;"</span>&gt;</span><br><span class="line">  &lt;div&gt;垂直居中flex&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div style=<span class="string">"border:1px solid #333333;width:130px;height:80px;position:relative;"</span>&gt;</span><br><span class="line">  &lt;div style=<span class="string">"position:absolute;top:50%;transform:translateY(-50%);"</span>&gt;垂直居中translateY(-50%)&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>垂直居中</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">父：div&#123;</span><br><span class="line">  line-height:0.6rem;</span><br><span class="line">&#125;</span><br><span class="line">子：span&#123;</span><br><span class="line">display: inline-block;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    line-height: 0.26rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">水平居中</span><br><span class="line">行内元素: text-align: center</span><br><span class="line">块级元素: margin: 0 auto</span><br><span class="line">position:absolute +left:50%+ transform:translateX(-50%)</span><br><span class="line">display:flex + justify-content: center</span><br><span class="line"></span><br><span class="line">垂直居中</span><br><span class="line">设置line-height 等于height</span><br><span class="line">position：absolute +top:50%+ transform:translateY(-50%)</span><br><span class="line">display:flex + align-items: center</span><br><span class="line">display:table+display:table-cell + vertical-align: middle;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -221,7 +214,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Mobile</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
         		</li>
       		
 		</ul>
@@ -277,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/26/mobilefont/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/26/center-css/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/26/bookmarks/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2017/09/26/mobilefont/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          bookmarks
+          mobilefont
         
       </div>
     </a>
   
   
-    <a href="/fullstack/2017/09/26/center-css/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">水平、垂直居中</div>
+    <a href="/fullstack/2017/09/26/css/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -341,7 +334,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "//qingfenger.github.io/fullstack/2017/09/26/mobilefont/",
+  id: "//qingfenger.github.io/fullstack/2017/09/26/center-css/",
   owner: '13749686',
   repo: 'https://qingfenger.github.io/fullstack/',
   oauth: {
