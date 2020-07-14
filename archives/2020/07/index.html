@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>CSS3中@support的用法 | myblog</title>
+  <title>Archives: 2020/7 | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SS中的@support主要是用于检测浏览器是否支持CSS的某个属性，其实就是条件判断，如果支持某个属性，你可以写一套样式，如果不支持某个属性，你也可以提供另外一套样式作为替补。但是这里有一点需要注意的是：@support对于浏览器的版本也是有要求的，不是说所有的浏览器以及其所有的版本都是支持@support的。下面就来说一下@support的用法：123456789101112131415161">
-<meta name="keywords" content="Css">
-<meta property="og:type" content="article">
-<meta property="og:title" content="CSS3中@support的用法">
-<meta property="og:url" content="//qingfenger.github.io/2017/09/26/support/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="myblog">
+<meta property="og:url" content="//qingfenger.github.io/archives/2020/07/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="SS中的@support主要是用于检测浏览器是否支持CSS的某个属性，其实就是条件判断，如果支持某个属性，你可以写一套样式，如果不支持某个属性，你也可以提供另外一套样式作为替补。但是这里有一点需要注意的是：@support对于浏览器的版本也是有要求的，不是说所有的浏览器以及其所有的版本都是支持@support的。下面就来说一下@support的用法：123456789101112131415161">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-14T01:21:33.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3中@support的用法">
-<meta name="twitter:description" content="SS中的@support主要是用于检测浏览器是否支持CSS的某个属性，其实就是条件判断，如果支持某个属性，你可以写一套样式，如果不支持某个属性，你也可以提供另外一套样式作为替补。但是这里有一点需要注意的是：@support对于浏览器的版本也是有要求的，不是说所有的浏览器以及其所有的版本都是支持@support的。下面就来说一下@support的用法：123456789101112131415161">
+<meta name="twitter:title" content="myblog">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -155,56 +150,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-support" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      CSS3中@support的用法
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/fullstack/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/fullstack/2020/07/14/support/" class="archive-article-date">
+  	<time datetime="2020-07-14T01:39:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/fullstack/2020/07/14/support/">CSS3中@support的用法</a>
     </h1>
   
 
-        
-        <a href="/fullstack/2017/09/26/support/" class="archive-article-date">
-  	<time datetime="2017-09-26T02:42:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>SS中的@support主要是用于检测浏览器是否支持CSS的某个属性，其实就是条件判断，如果支持某个属性，你可以写一套样式，如果不支持某个属性，你也可以提供另外一套样式作为替补。但是这里有一点需要注意的是：@support对于浏览器的版本也是有要求的，不是说所有的浏览器以及其所有的版本都是支持@support的。<br>下面就来说一下@support的用法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">1.基本语法是这样的：</span><br><span class="line">@support(prop:value)&#123;</span><br><span class="line">/*自己的样式*/</span><br><span class="line">&#125;</span><br><span class="line">@supports (display: flex) &#123;  div &#123;    display: flex;  &#125;&#125;</span><br><span class="line">注释：如果浏览器支持display:flex属性的话，那么div的样式就是display:flex</span><br><span class="line"></span><br><span class="line">2.逻辑操作符：“not” 的用法</span><br><span class="line">@supports not (display: flex) &#123;  div &#123;    <span class="built_in">float</span>: right;  &#125;&#125;</span><br><span class="line">注释：如果浏览器不支持display:flex属性的话，那么div的样式就是display:right</span><br><span class="line"></span><br><span class="line">3.逻辑操作符：“and”的用法</span><br><span class="line">@supports (display: flex) and ( box-shadow: 2px 2px 2px black ) &#123;</span><br><span class="line">	/*自己的样式*/</span><br><span class="line">&#125;</span><br><span class="line">注释：如果浏览器支持display:flex和box-shadow的属性，就执行里面自己的样式</span><br><span class="line"></span><br><span class="line">4.逻辑操作符：“or” 的用法</span><br><span class="line">@supports (display: -webkit-flex) or (display: -moz-flex) or(display: flex) &#123;</span><br><span class="line">      /*自己的样式 */</span><br><span class="line">&#125;</span><br><span class="line">注释：如果浏览器支持其中一个就可以执行里面自己的样式</span><br><span class="line"></span><br><span class="line">5.混用的例子</span><br><span class="line">“or”和“and”混用，在@supports中“or”和“and”混用时，必须使用括号（）来区分其优先级</span><br><span class="line">@supports ((transition-property: color) or (animation-name: foo)) and (transform: rotate(10deg)) &#123;</span><br><span class="line">	/*自己的样式 */</span><br><span class="line">&#125;</span><br><span class="line">@supports (transition-property: color) or ((animation-name: foo) and (transform: rotate(10deg))) &#123;</span><br><span class="line">        /*自己的样式 */</span><br><span class="line">&#125;</span><br><span class="line">“or”、“and” 和 “not” 混用</span><br><span class="line">@supports (display: grid) and (not (transition-property: color) or (animation-name: foo))&#123;</span><br><span class="line">/*自己的样式 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -216,131 +191,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2017/09/26/support/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/fullstack/2017/09/26/css/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          css
-        
-      </div>
-    </a>
   
   
-    <a href="/fullstack/2017/09/26/node/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">node.js</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "//qingfenger.github.io/fullstack/2017/09/26/support/",
-  owner: '13749686',
-  repo: 'https://qingfenger.github.io/fullstack/',
-  oauth: {
-    client_id: 'd27cac6107b0536f9f4a',
-    client_secret: '86dd74f130c852b29c76070bf2046b060a5aed43',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -363,8 +226,8 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
