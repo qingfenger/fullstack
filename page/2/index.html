@@ -152,6 +152,169 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-objectAttributes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/fullstack/2019/12/29/objectAttributes/">object attributes</a>
+    </h1>
+  
+
+        
+        <a href="/fullstack/2019/12/29/objectAttributes/" class="archive-article-date">
+  	<time datetime="2019-12-29T04:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Object 属性</strong><br>Object.prototype 属性表示Object的原型对象<br>writable：false    enumberable:false  configurable:false</p>
+<p>Object.prototype.constructor 特定函数，用于创建一个对象的原型。<br>Object.prototype.<strong>proto</strong> 指向当对象被实例化的时候，用作原型的对象。<br>Object.prototype.hasOwnProperty() 返回一个布尔值，表示某个对象是否含有指定的属性，而且此属性非原型链继承的。<br>Object.prototype.isPrototyeOf() 返回一个布尔值，表示指定的对象是否在本对象的原型链中。<br>Object.prototype.propertyIsEnumberable() 判断指定属性是否可枚举<br>Object.prototype.toString() 返回对象的字符串表示<br>Object.prototype.valueOf() 返回指定对象的原始值<br>由于 JavaScript 并不完全具有子类对象, 所以原型是一种有用的变通方法, 可以使用某些函数的 “基类” 对象来充当对象。例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">var Person = function(name) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.canTalk = true;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Person.prototype.greet = function() &#123;</span><br><span class="line">  if (this.canTalk) &#123;</span><br><span class="line">    console.log(&apos;Hi, I am &apos; + this.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var Employee = function(name, title) &#123;</span><br><span class="line">  Person.call(this, name);</span><br><span class="line">  this.title = title;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Employee.prototype = Object.create(Person.prototype);</span><br><span class="line"></span><br><span class="line">Employee.prototype.greet = function() &#123;</span><br><span class="line">  if (this.canTalk) &#123;</span><br><span class="line">    console.log(&apos;Hi, I am &apos; + this.name + &apos;, the &apos; + this.title);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var Customer = function(name) &#123;</span><br><span class="line">  Person.call(this, name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Customer.prototype = Object.create(Person.prototype);</span><br><span class="line"></span><br><span class="line">var Mime = function(name) &#123;</span><br><span class="line">  Person.call(this, name);</span><br><span class="line">  this.canTalk = false;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Mime.prototype = Object.create(Person.prototype);</span><br><span class="line"></span><br><span class="line">var bob = new Employee(&apos;Bob&apos;, &apos;Builder&apos;);</span><br><span class="line">var joe = new Customer(&apos;Joe&apos;);</span><br><span class="line">var rg = new Employee(&apos;Red Green&apos;, &apos;Handyman&apos;);</span><br><span class="line">var mike = new Customer(&apos;Mike&apos;);</span><br><span class="line">var mime = new Mime(&apos;Mime&apos;);</span><br><span class="line"></span><br><span class="line">bob.greet();</span><br><span class="line">// Hi, I am Bob, the Builder</span><br><span class="line"></span><br><span class="line">joe.greet();</span><br><span class="line">// Hi, I am Joe</span><br><span class="line"></span><br><span class="line">rg.greet();</span><br><span class="line">// Hi, I am Red Green, the Handyman</span><br><span class="line"></span><br><span class="line">mike.greet();</span><br><span class="line">// Hi, I am Mike</span><br><span class="line"></span><br><span class="line">mime.greet();</span><br></pre></td></tr></table></figure></p>
+<p><strong>Object 方法</strong><br>Object.assign(target, …sources) 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const target = &#123; a: 1, b: 2 &#125;;</span><br><span class="line">const source = &#123; b: 4, c: 5 &#125;;</span><br><span class="line">const returnedTarget = Object.assign(target, source);</span><br><span class="line">console.log(target);</span><br><span class="line">// expected output: Object &#123; a: 1, b: 4, c: 5 &#125;</span><br><span class="line">console.log(returnedTarget);</span><br><span class="line">// expected output: Object &#123; a: 1, b: 4, c: 5 &#125;</span><br></pre></td></tr></table></figure></p>
+<p>Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const person = &#123;</span><br><span class="line">  isHuman: false,</span><br><span class="line">  printIntroduction: function () &#123;</span><br><span class="line">    console.log(`My name is $&#123;this.name&#125;. Am I human? $&#123;this.isHuman&#125;`);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const me = Object.create(person);</span><br><span class="line"></span><br><span class="line">me.name = &quot;Matthew&quot;; // &quot;name&quot; is a property set on &quot;me&quot;, but not on &quot;person&quot;</span><br><span class="line">me.isHuman = true; // inherited properties can be overwritten</span><br><span class="line"></span><br><span class="line">me.printIntroduction();//&quot;My name is Matthew. Am I human? true&quot;</span><br><span class="line">person.printIntroduction()//&quot;My name is undefined. Am I human? false&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Object.defineProperties(obj, props) 方法直接在一个对象上定义新的属性或修改现有属性，并返回该对象。<br>props默认值configurable:false，enumerable：false，value：undefined，writable：false，get：undefined,set:undefined;</p>
+<hr>
+<p>apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const numbers = [5, 6, 2, 3, 7];</span><br><span class="line">const max = Math.max.apply(null, numbers);</span><br><span class="line">console.log(max);// expected output: 7</span><br><span class="line">const min = Math.min.apply(null, numbers);</span><br><span class="line">console.log(min);// expected output: 2</span><br></pre></td></tr></table></figure></p>
+<p>bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const module = &#123;</span><br><span class="line">  x: 42,</span><br><span class="line">  getX: function() &#123;</span><br><span class="line">    return this.x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const unboundGetX = module.getX;</span><br><span class="line">console.log(unboundGetX()); // The function gets invoked at the global scope</span><br><span class="line">// expected output: undefined</span><br><span class="line"></span><br><span class="line">const boundGetX = unboundGetX.bind(module);</span><br><span class="line">console.log(boundGetX());</span><br><span class="line">// expected output: 42</span><br></pre></td></tr></table></figure></p>
+<p>call() 方法使用一个指定的 this 值和单独给出的一个或多个参数来调用一个函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Product(name, price) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.price = price;</span><br><span class="line">&#125;</span><br><span class="line">function Food(name, price) &#123;</span><br><span class="line">  Product.call(this, name, price);</span><br><span class="line">  this.category = &apos;food&apos;;</span><br><span class="line">&#125;</span><br><span class="line">console.log(new Food(&apos;cheese&apos;, 5).name);</span><br><span class="line">// expected output: &quot;cheese&quot;</span><br></pre></td></tr></table></figure></p>
+<p>注意：call()方法的作用和 apply() 方法类似，区别就是call()方法接受的是参数列表，而apply()方法接受的是一个参数数组。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/fullstack/2019/12/29/objectAttributes/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-object" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/fullstack/2019/12/26/object/">object</a>
+    </h1>
+  
+
+        
+        <a href="/fullstack/2019/12/26/object/" class="archive-article-date">
+  	<time datetime="2019-12-26T01:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>遍历对象</strong><br>其实for..in操作的主要目的就是遍历对象的属性，如果只需要获取对象的实例属性，可以使用hasOwnProperty()进行过滤。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function Person(name, age) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.getName = function() &#123;</span><br><span class="line">  return this.name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 实例化</span><br><span class="line">var jenemy = new Person(&apos;jenemy&apos;, 25);</span><br><span class="line"></span><br><span class="line">for (var prop in Person) &#123;</span><br><span class="line">  console.log(prop); // name age getName</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var hasOwn = Object.prototype.hasOwnProperty;</span><br><span class="line">for (var prop2 in jenemy) &#123;</span><br><span class="line">  if (hasOwn.call(jenemy, prop2)) &#123;</span><br><span class="line">    console.log(prop2); // name age</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Object.keys()</strong><br>Object.keys()用于获取对象自身所有的可枚举的属性值，但不包括原型中的属性，然后返回一个由属性名组成的数组。注意它同for..in一样不能保证属性按对象原来的顺序输出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 遍历数组</span><br><span class="line">var colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</span><br><span class="line">colors.length = 10;</span><br><span class="line">colors.push(&apos;yellow&apos;);</span><br><span class="line">Array.prototype.demo = function () &#123;&#125;;</span><br><span class="line"></span><br><span class="line">Object.keys(colors); // 0 1 2 10</span><br><span class="line"></span><br><span class="line">// 遍历对象</span><br><span class="line">function Person(name, age) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.demo = function() &#123;&#125;;</span><br><span class="line"></span><br><span class="line">var jenemy = new Person(&apos;jenemy&apos;, 25);</span><br><span class="line"></span><br><span class="line">Object.keys(jenemy); // name age</span><br></pre></td></tr></table></figure></p>
+<p><strong>Object.getOwnPropertyNames()</strong><br>Object.getOwnPropertyNames()方法返回对象的所有自身属性的属性名（包括不可枚举的属性）组成的数组，但不会获取原型链上的属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function A(a,aa) &#123;</span><br><span class="line">  this.a = a;</span><br><span class="line">  this.aa = aa;</span><br><span class="line">  this.getA = function() &#123;</span><br><span class="line">    return this.a;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 原型方法</span><br><span class="line">A.prototype.aaa = function () &#123;&#125;;</span><br><span class="line"></span><br><span class="line">var B = new A(&apos;b&apos;, &apos;bb&apos;);</span><br><span class="line">B.myMethodA = function() &#123;&#125;;</span><br><span class="line">// 不可枚举方法</span><br><span class="line">Object.defineProperty(B, &apos;myMethodB&apos;, &#123;</span><br><span class="line">  enumerable: false,</span><br><span class="line">  value: function() &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Object.getOwnPropertyNames(B); // [&quot;a&quot;, &quot;aa&quot;, &quot;getA&quot;, &quot;myMethodA&quot;, &quot;myMethodB&quot;]</span><br></pre></td></tr></table></figure></p>
+<p><strong>补充for..of</strong><br>for..of为ES6新增的方法，主要来遍历可迭代的对象（包括Array, Map, Set, arguments等），它主要用来获取对象的属性值，而for..in主要获取对象的属性名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</span><br><span class="line">colors.length = 5;</span><br><span class="line">colors.push(&apos;yellow&apos;);</span><br><span class="line"></span><br><span class="line">for (var i in colors) &#123;</span><br><span class="line">  console.log(colors[i]); // red green blue yellow</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (var j of colors) &#123;</span><br><span class="line">  console.log(j); // red green blue undefined undefined yellow</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到使用for..of可以输出包括数组中不存在的值在内的所有值。<br>其实除了使用for..of直接获取属性值外，我们也可以利用Array.prototype.forEach()来达到同样的目的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</span><br><span class="line">colors.foo = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">Object.keys(colors).forEach(function(elem, index) &#123;</span><br><span class="line">  console.log(colors[elem]); // red green blue hello</span><br><span class="line">  console.log(colors[index]); // red green blue undefined</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">colors.forEach(function(elem, index) &#123;</span><br><span class="line">  console.log(elem); // red green blue</span><br><span class="line">  console.log(index); // 0 1 2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>总结</strong><br>其实这几个方法之间的差异主要在属性是否可可枚举，是来自原型，还是实例。<br>|—————————|:———-:|:———————————–:|<br>| 方法                        | 适用范围    |    描述|<br>| for..in                    | 数组，对象  |    获取可枚举的实例和原型属性名|<br>| Object.keys()                | 数组，对象  |    返回可枚举的实例属性名组成的数组|<br>| Object.getPropertyNames()  | 数组，对象  |    返回除原型属性以外的所有属性（包括不可枚举的属性）名组成的数组|<br>| for..of                    | 可迭代对象(Array, Map, Set, arguments等) | 返回属性值|</p>
+<p>参考： <a href="https://www.cnblogs.com/wujie520303/p/4931384.html" target="_blank" rel="noopener">博客</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/fullstack/2019/12/26/object/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -247,6 +410,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -688,89 +862,6 @@
 
 
   
-    <article id="post-css" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/fullstack/2017/09/26/css/">css</a>
-    </h1>
-  
-
-        
-        <a href="/fullstack/2017/09/26/css/" class="archive-article-date">
-  	<time datetime="2017-09-26T02:42:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>-ie 背景透明文字不透明</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">background:rgba(255, 255, 255, 0.8) none repeat scroll 0 0 !important;/*实现FF背景透明，文字不透明*/</span><br><span class="line">filter:Alpha(opacity=80); background:<span class="comment">#fff;/*实现IE背景透明*/&#125;</span></span><br><span class="line">.con p&#123; position:relative;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>实现IE文字不透明</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">iframe:frameborder=<span class="string">"0"</span> scrolling=<span class="string">"no"</span> </span><br><span class="line">表格边框：table&#123;</span><br><span class="line">	          border-collapse:collapse;合并separate;分开</span><br><span class="line">	          border-spacing:10px 50px;//边框空间</span><br><span class="line">	          empty-cells:hide;隐藏表格中空单元格上的边框和背景</span><br><span class="line">          &#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>改变input输入框中placeholder的字体样式</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">:-moz-placeholder &#123; /* Mozilla Firefox 4 to 18 */</span><br><span class="line">    color: <span class="comment">#f00;  </span></span><br><span class="line">&#125;</span><br><span class="line">::-moz-placeholder &#123; /* Mozilla Firefox 19+ */</span><br><span class="line">    color: <span class="comment">#f00;</span></span><br><span class="line">&#125;</span><br><span class="line">input:-ms-input-placeholder,</span><br><span class="line">textarea:-ms-input-placeholder &#123;</span><br><span class="line">    color: <span class="comment">#f00;</span></span><br><span class="line">&#125;</span><br><span class="line">input::-webkit-input-placeholder,</span><br><span class="line">textarea::-webkit-input-placeholder &#123;</span><br><span class="line">    color: <span class="comment">#f00;</span></span><br><span class="line">&#125;</span><br><span class="line">还原移动端按钮的样式：-webkit-appearance:none;</span><br></pre></td></tr></table></figure></p>
-<p><strong>transiton</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@keyframes mymove</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">50%  &#123;top:100px;&#125;</span><br><span class="line">75%  &#123;top:200px;&#125;</span><br><span class="line">100% &#123;top:0px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes mymove /* Firefox */</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">50%  &#123;top:100px;&#125;</span><br><span class="line">75%  &#123;top:200px;&#125;</span><br><span class="line">100% &#123;top:0px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-webkit-keyframes mymove /* Safari 和 Chrome */</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">50%  &#123;top:100px;&#125;</span><br><span class="line">75%  &#123;top:200px;&#125;</span><br><span class="line">100% &#123;top:0px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-o-keyframes mymove /* Opera */</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;top:0px;&#125;</span><br><span class="line">25%  &#123;top:200px;&#125;</span><br><span class="line">50%  &#123;top:100px;&#125;</span><br><span class="line">75%  &#123;top:200px;&#125;</span><br><span class="line">100% &#123;top:0px;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>苹果input disabled样式</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">	input:disabled &#123;</span><br><span class="line">		-webkit-text-fill-color: rgba(0, 0, 0, 1);</span><br><span class="line">		-webkit-opacity: 1;</span><br><span class="line">	&#125;</span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line">***滚动条设置**</span><br><span class="line">```bash</span><br><span class="line">   .reportLeft::-webkit-scrollbar &#123;  </span><br><span class="line">        width: 8px;/*滚动条高度*/  </span><br><span class="line">        height: 8px; /*滚动条宽度*/ </span><br><span class="line">        background-color: <span class="comment">#cccccc;  </span></span><br><span class="line">      &#125;  </span><br><span class="line">      /*定义滚动条轨道 内阴影+圆角*/  </span><br><span class="line">   .reportLeft::-webkit-scrollbar-track &#123;  </span><br><span class="line">        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  </span><br><span class="line">        background: <span class="comment">#fff ;  </span></span><br><span class="line">      &#125;  </span><br><span class="line">      /*定义滑块 内阴影+圆角*/  </span><br><span class="line">    .reportLeft::-webkit-scrollbar-thumb &#123;  </span><br><span class="line">        border-radius: 3px;  </span><br><span class="line">        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  </span><br><span class="line">        background-color:rgba(204, 204, 204, 0.7);  </span><br><span class="line">      &#125;  </span><br><span class="line">    .reportLeft::-webkit-scrollbar-thumb:hover &#123;  </span><br><span class="line">        border-radius: 3px;  </span><br><span class="line">        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  </span><br><span class="line">        background-color:rgba(204,204,204, 1);  </span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>css:</strong><br><strong>文字渐变</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">background-image: -webkit-linear-gradient(left, rgb(255, 118, 92), rgb(255, 35, 179));</span><br><span class="line">-webkit-background-clip: text;</span><br><span class="line">-webkit-text-fill-color: transparent;//text-fill-color会覆盖color所定义的字体颜色：</span><br></pre></td></tr></table></figure></p>
-<p><strong>边框小于1px</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.bdr-r:after &#123;</span><br><span class="line">    height: 100%;</span><br><span class="line">    content: <span class="string">''</span>;</span><br><span class="line">    width: 1PX;</span><br><span class="line">    border-right: 1PX solid <span class="comment">#f0f0f0;</span></span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    right: 0;</span><br><span class="line">    transform: scaleX(0.5);</span><br><span class="line">    -webkit-transform: scaleX(0.5);</span><br><span class="line">    z-index: 10;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>fixd absolute遮罩层点击时永远不获取target即没有点击事件</strong><br>border-radius:100px/20px;//横向radius/纵向radius</p>
-<p><strong>css3兼容ie9</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">behavior: url(ie-css3.htc);/*兼容ie，加上这句*/</span><br><span class="line">**iconfont 用伪元素添加时为空方块时添加font-family: <span class="string">"iconfont"</span>;</span><br><span class="line">           content默认为16进制所以content中不需要添加X</span><br><span class="line">           content:attr(data-icon);未验证成功**</span><br><span class="line"> .com-dialog .el-dialog__title:before&#123;</span><br><span class="line">    font-family: <span class="string">"iconfont"</span>;</span><br><span class="line">    /*content:<span class="string">"\e639"</span>;*/</span><br><span class="line">    content:attr(data-icon);</span><br><span class="line">    font-size:16px;</span><br><span class="line">    margin-right:8px;</span><br><span class="line">    font-weight:normal;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>  <strong>1rem、1em、1vh、1px各自代表的含义？</strong><br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">rem</span><br><span class="line">rem是全部的长度都相对于根元素&lt;html&gt;元素。通常做法是给html元素设置一个字体大小，然后其他元素的长度单位就为rem。</span><br><span class="line"></span><br><span class="line">em</span><br><span class="line">子元素字体大小的em是相对于父元素字体大小</span><br><span class="line">元素的width/height/padding/margin用em的话是相对于该元素的font-size</span><br><span class="line"></span><br><span class="line">vw/vh</span><br><span class="line">全称是 Viewport Width 和 Viewport Height，视窗的宽度和高度，相当于 屏幕宽度和高度的 1%，不过，处理宽度的时候%单位更合适，处理高度的 话 vh 单位更好。</span><br><span class="line"></span><br><span class="line">px</span><br><span class="line">px像素（Pixel）。相对长度单位。像素px是相对于显示器屏幕分辨率而言的。</span><br><span class="line">一般电脑的分辨率有&#123;1920*1024&#125;等不同的分辨率</span><br><span class="line">1920*1024 前者是屏幕宽度总共有1920个像素,后者则是高度为1024个像素</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/fullstack/2017/09/26/css/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-node" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -817,80 +908,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/fullstack/2017/09/26/node/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tool" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/fullstack/2017/09/25/tool/">tool</a>
-    </h1>
-  
-
-        
-        <a href="/fullstack/2017/09/25/tool/" class="archive-article-date">
-  	<time datetime="2017-09-25T07:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>css3 标签兼容：<a href="http://caniuse.com/" target="_blank" rel="noopener">http://caniuse.com/</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Tool</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/fullstack/2017/09/25/tool/">展开全文 >></a>
         </p>
       
 
@@ -1034,6 +1051,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
