@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>Archives: 2020/7 | myblog</title>
+  <title>myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="myblog">
-<meta property="og:url" content="//qingfenger.github.io/archives/2020/07/index.html">
+<meta property="og:url" content="//qingfenger.github.io/page/4/index.html">
 <meta property="og:site_name" content="myblog">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -152,134 +152,170 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-typeofInstanceof" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/fullstack/2017/09/03/typeofInstanceof/">js</a>
+    </h1>
+  
+
+        
+        <a href="/fullstack/2017/09/03/typeofInstanceof/" class="archive-article-date">
+  	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>typeof用于检测数据类型,不必细说,只归纳一下易混淆的概念.<br>1.对于对象、数组、null 返回的值是 object 。比如typeof(window)，typeof(document)，typeof(null)返回的值都是object。<br>2.对于函数类型，返回的值是 function。比如：typeof(eval)，typeof(Date)返回的值都是function。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// var a = null;</span><br><span class="line">// alert(typeof(a))</span><br><span class="line">//  alert(typeof(Date));            // <span class="keyword">function</span>(Date使用前需要实例化的原因)</span><br><span class="line">//  alert(typeof(null));            // object</span><br><span class="line">//  alert(typeof(undefined))        // undefined</span><br><span class="line">//  alert(typeof(NaN))              // number</span><br><span class="line">//  alert(typeof(NaN == undefined)) // boolean</span><br><span class="line">//  alert(typeof(NaN == NaN))       // boolean</span><br><span class="line">//  var str = <span class="string">'123abc'</span></span><br><span class="line">//  alert(typeof(str++))            // number</span><br><span class="line">//  alert(str)                      // NaN</span><br></pre></td></tr></table></figure></p>
+<p>比较typeof与instanceof<br>相同点：<br>JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空， 或者是什么类型的。</p>
+<p>不同点:<br>typeof:<br>1.返回值是一个字符串， 用来说明变量的数据类型。<br>2.typeof 一般只能返回如下几个结果： number, boolean, string, function, object, undefined。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (typeof a != <span class="string">"undefined"</span>) &#123;</span><br><span class="line">   console.log(<span class="string">"ok"</span>);</span><br><span class="line"></span><br><span class="line"> &#125; eles &#123;</span><br><span class="line">    console.log(<span class="string">"not ok"</span>);</span><br><span class="line">&#125;</span><br><span class="line">//下面的代码是错误的</span><br><span class="line">// <span class="keyword">if</span> (a) //因为如果 a 不存在（ 未声明） 则会出错。</span><br><span class="line">// <span class="keyword">if</span> (a) &#123;</span><br><span class="line">//     console.log(<span class="string">"ok"</span>);</span><br><span class="line"></span><br><span class="line">// &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">//     console.log(<span class="string">'cc'</span>);</span><br><span class="line"></span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+<p><strong><em>对于 Array, Null 等特殊对象使用 typeof 一律返回 object， 这正是 typeof 的局限性</em></strong><br>instanceof:<br>1.返回值为布尔值;</p>
+<ol start="2">
+<li>instanceof 用于判断一个变量是否属于某个对象的实例。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// var a = new Array();</span><br><span class="line">// alert(a instanceof Array); // <span class="literal">true</span></span><br><span class="line">// alert(a instanceof Object) // <span class="literal">true</span></span><br><span class="line">//如上， 会返回 <span class="literal">true</span>， 同时 alert(a instanceof Object) 也会返回 <span class="literal">true</span>;</span><br><span class="line">// 这是因为 Array 是 object 的子类。</span><br><span class="line">// alert(b instanceof Array) // b is not defined</span><br><span class="line"></span><br><span class="line">// <span class="keyword">function</span> <span class="function"><span class="title">Test</span></span>() &#123;&#125;;</span><br><span class="line">// var a = new <span class="built_in">test</span>();</span><br><span class="line">// alert(a instanceof <span class="built_in">test</span>) // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/fullstack/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/fullstack/2020/07/29/meta/" class="archive-article-date">
-  	<time datetime="2020-07-29T12:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/fullstack/2020/07/29/meta/">meta标签的作用与使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">typeof与instanceof的异同?</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/fullstack/2017/09/03/typeofInstanceof/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/fullstack/2020/07/14/css/" class="archive-article-date">
-  	<time datetime="2020-07-14T02:42:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo-安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/fullstack/2020/07/14/css/">css</a>
+      <a class="article-title" href="/fullstack/2017/09/03/hexo-安装/">hexo 安装</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/fullstack/2017/09/03/hexo-安装/" class="archive-article-date">
+  	<time datetime="2017-09-03T12:16:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.首先安装node npm git</p>
+<p>2.安装hexo ：npm install hexo-cli -g<br></p>
+        
+          <a class="article-more-a" href="/fullstack/2017/09/03/hexo-安装/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/fullstack/2017/09/03/hexo-安装/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/fullstack/2020/07/14/support/" class="archive-article-date">
-  	<time datetime="2020-07-14T01:39:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/fullstack/2020/07/14/support/">CSS3中@support的用法</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Css</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/fullstack/page/3/">&laquo; Prev</a><a class="page-number" href="/fullstack/">1</a><a class="page-number" href="/fullstack/page/2/">2</a><a class="page-number" href="/fullstack/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
-
-    
 
 
           </div>
@@ -301,9 +337,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

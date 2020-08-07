@@ -378,19 +378,19 @@
 
 
   
-    <article id="post-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-debounceThrottle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/fullstack/2017/09/03/js/">js</a>
+      <a class="article-title" href="/fullstack/2017/09/03/debounceThrottle/">js</a>
     </h1>
   
 
         
-        <a href="/fullstack/2017/09/03/js/" class="archive-article-date">
+        <a href="/fullstack/2017/09/03/debounceThrottle/" class="archive-article-date">
   	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
 </a>
         
@@ -398,14 +398,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><em>defer与async的区别是：</em></strong><br>defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。</p>
-<script src="e.js" defer></script>
-<script src="e.js" async></script>
+        <p><strong><em>js防抖和节流</em></strong><br>在进行窗口的resize、scroll，输入框内容校验等操作时，如果事件处理函数调用的频率无限制，会加重浏览器的负担，导致用户体验非常糟糕。此时我们可以采用debounce（防抖）和throttle（节流）的方式来减少调用频率，同时又不影响实际效果。</p>
+<p>函数防抖</p>
+<p>函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时。如下图，持续触发scroll事件时，并不执行handle函数，当1000毫秒内没有触发scroll事件时，才会延时触发scroll事件。<br>一起来实现个简单的debounce~</p>
+<p>防抖debounce代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 防抖</span><br><span class="line"><span class="keyword">function</span> debounce(fn, <span class="built_in">wait</span>) &#123;</span><br><span class="line">    var timeout = null;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        <span class="keyword">if</span>(timeout !== null)   clearTimeout(timeout);</span><br><span class="line">        timeout = setTimeout(fn, <span class="built_in">wait</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 处理函数</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">    console.log(Math.random());</span><br><span class="line">&#125;</span><br><span class="line">// 滚动事件</span><br><span class="line">window.addEventListener(<span class="string">'scroll'</span>, debounce(handle, 1000));</span><br></pre></td></tr></table></figure></p>
+<p>当持续触发scroll事件时，事件处理函数handle只在停止滚动1000毫秒之后才会调用一次，也就是说在持续触发scroll事件的过程中，事件处理函数handle一直没有执行。</p>
+<p>函数节流</p>
+<p>函数节流（throttle）：当持续触发事件时，保证一定时间段内只调用一次事件处理函数。节流通俗解释就比如我们水龙头放水，阀门一打开，水哗哗的往下流，秉着勤俭节约的优良传统美德，我们要把水龙头关小点，最好是如我们心意按照一定规律在某个时间间隔内一滴一滴的往下滴。如下图，持续触发scroll事件时，并不立即执行handle函数，每隔1000毫秒才会执行一次handle函数。<br>函数节流主要有两种实现方法：时间戳和定时器。接下来分别用两种方法实现throttle~</p>
+<p>节流throttle代码（时间戳）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var throttle = <span class="keyword">function</span>(func, delay) &#123;</span><br><span class="line">　　var prev = Date.now();</span><br><span class="line">　　<span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">　　　　var context = this;</span><br><span class="line">　　　　var args = arguments;</span><br><span class="line">　　　　var now = Date.now();</span><br><span class="line">　　　　<span class="keyword">if</span> (now - prev &gt;= delay) &#123;</span><br><span class="line">　　　　　　func.apply(context, args);</span><br><span class="line">　　　　　　prev = Date.now();</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">　　console.log(Math.random());</span><br><span class="line">&#125;</span><br><span class="line">window.addEventListener(<span class="string">'scroll'</span>, throttle(handle, 1000));</span><br></pre></td></tr></table></figure>
+<p>当高频事件触发时，第一次会立即执行（给scroll事件绑定函数与真正触发事件的间隔一般大于delay，如果你非要在网页加载1000毫秒以内就去滚动网页的话，我也没办法o(╥﹏╥)o），而后再怎么频繁地触发事件，也都是每delay时间才执行一次。而当最后一次事件触发完毕后，事件也不会再被执行了 （最后一次触发事件与倒数第二次触发事件的间隔小于delay，为什么小于呢？因为大于就不叫高频了呀(<em>╹▽╹</em>)）。</p>
+<p>节流throttle代码（定时器）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 节流throttle代码（定时器）：</span><br><span class="line">var throttle = <span class="keyword">function</span>(func, delay) &#123;</span><br><span class="line">    var timer = null;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var context = this;</span><br><span class="line">        var args = arguments;</span><br><span class="line">        <span class="keyword">if</span> (!timer) &#123;</span><br><span class="line">            timer = setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">                func.apply(context, args);</span><br><span class="line">                timer = null;</span><br><span class="line">            &#125;, delay);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">    console.log(Math.random());</span><br><span class="line">&#125;</span><br><span class="line">window.addEventListener(<span class="string">'scroll'</span>, throttle(handle, 1000));</span><br></pre></td></tr></table></figure></p>
+<p>当触发事件的时候，我们设置一个定时器，再次触发事件的时候，如果定时器存在，就不执行，直到delay时间后，定时器执行执行函数，并且清空定时器，这样就可以设置下个定时器。当第一次触发事件时，不会立即执行函数，而是在delay秒后才执行。而后再怎么频繁触发事件，也都是每delay时间才执行一次。当最后一次停止触发后，由于定时器的delay延迟，可能还会执行一次函数。</p>
+<p>节流中用时间戳或定时器都是可以的。更精确地，可以用时间戳+定时器，当第一次触发事件时马上执行事件处理函数，最后一次触发事件后也还会执行一次事件处理函数。</p>
+<p>节流throttle代码（时间戳+定时器）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 节流throttle代码（时间戳+定时器）：</span><br><span class="line">var throttle = <span class="keyword">function</span>(func, delay) &#123;</span><br><span class="line">    var timer = null;</span><br><span class="line">    var startTime = Date.now();</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        var curTime = Date.now();</span><br><span class="line">        var remaining = delay - (curTime - startTime);</span><br><span class="line">        var context = this;</span><br><span class="line">        var args = arguments;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        <span class="keyword">if</span> (remaining &lt;= 0) &#123;</span><br><span class="line">            func.apply(context, args);</span><br><span class="line">            startTime = Date.now();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            timer = setTimeout(func, remaining);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">handle</span></span>() &#123;</span><br><span class="line">    console.log(Math.random());</span><br><span class="line">&#125;</span><br><span class="line">window.addEventListener(<span class="string">'scroll'</span>, throttle(handle, 1000));</span><br></pre></td></tr></table></figure>
+<p>在节流函数内部使用开始时间startTime、当前时间curTime与delay来计算剩余时间remaining，当remaining&lt;=0时表示该执行事件处理函数了（保证了第一次触发事件就能立即执行事件处理函数和每隔delay时间执行一次事件处理函数）。如果还没到时间的话就设定在remaining时间后再触发 （保证了最后一次触发事件后还能再执行一次事件处理函数）。当然在remaining这段时间中如果又一次触发事件，那么会取消当前的计时器，并重新计算一个remaining来判断当前状态。</p>
+<p>总结</p>
+<p>函数防抖：将几次操作合并为一此操作进行。原理是维护一个计时器，规定在delay时间后触发函数，但是在delay时间内再次触发的话，就会取消之前的计时器而重新设置。这样一来，只有最后一次操作能被触发。</p>
+<p>函数节流：使得一定时间内只触发一次函数。原理是通过判断是否到达一定时间来触发函数。</p>
+<p>区别： 函数节流不管事件触发有多频繁，都会保证在规定时间内一定会执行一次真正的事件处理函数，而函数防抖只是在最后一次事件后才触发一次函数。 比如在页面的无限加载场景下，我们需要用户在滚动页面时，每隔一段时间发一次 Ajax 请求，而不是在用户停下滚动页面操作时才去请求数据。这样的场景，就适合用节流技术来实现。</p>
 
-<p>昨天日期：<br>    function GetDateStr(AddDayCount) {<br>        var dd = new Date();<br>        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期<br>        var y = dd.getFullYear();<br>        var m = dd.getMonth()+1;//获取当前月份的日期<br>        var d = dd.getDate();<br>        return y+”-“+m+”-“+d;<br>    }<br>    console.log(“<br>昨天：”+GetDateStr(-1));<br></p>
-        
-          <a class="article-more-a" href="/fullstack/2017/09/03/js/#more">more >></a>
-        
       
 
       
@@ -418,7 +431,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">防抖和节流</a>
         		</li>
       		
 		</ul>
@@ -428,7 +441,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/fullstack/2017/09/03/js/">展开全文 >></a>
+          <a class="article-more-a" href="/fullstack/2017/09/03/debounceThrottle/">展开全文 >></a>
         </p>
       
 
@@ -534,19 +547,19 @@
 
 
   
-    <article id="post-js-下载拖动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/fullstack/2017/09/03/js-下载拖动/">浮动下载拖动</a>
+      <a class="article-title" href="/fullstack/2017/09/03/js/">js</a>
     </h1>
   
 
         
-        <a href="/fullstack/2017/09/03/js-下载拖动/" class="archive-article-date">
+        <a href="/fullstack/2017/09/03/js/" class="archive-article-date">
   	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
 </a>
         
@@ -554,8 +567,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>浮动下载拖动</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(document.querySelector(<span class="string">".excel_float"</span>))&#123;</span><br><span class="line">    var excel_float=document.querySelector(<span class="string">".excel_float"</span>);</span><br><span class="line">    excel_float.addEventListener(<span class="string">'touchmove'</span>,touchmoveFun,<span class="literal">false</span>);</span><br><span class="line">    excel_float.addEventListener(<span class="string">"touchend"</span>,touchendFun,<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">function</span> touchmoveFun(evt)&#123;</span><br><span class="line">        evt.preventDefault();//阻止触摸时浏览器的缩放、滚动条等</span><br><span class="line">        var touch=evt.touches[0];//获取第一个触点</span><br><span class="line">        var x=Number(touch.pageX);//页面触点X坐标</span><br><span class="line">        var y=Number(touch.pageY);//页面触点Y坐标</span><br><span class="line">        var width=excel_float.offsetWidth;</span><br><span class="line">        var halfWidth=parseFloat(width)*0.5;</span><br><span class="line">        var moveX=x-halfWidth;</span><br><span class="line">        var moveY=y-halfWidth;</span><br><span class="line">        var moveBx=x+halfWidth;</span><br><span class="line">        var moveBy=y+halfWidth;</span><br><span class="line">        var screenScroll=document.documentElement.scrollTop  || document.body.scrollTop;</span><br><span class="line">        var screenwidth = document.documentElement.clientWidth || document.body.clientWidth;</span><br><span class="line">        var muicontentwidth=document.querySelector(<span class="string">".mui-content"</span>).offsetWidth;</span><br><span class="line">        var screenheight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">        <span class="keyword">if</span>(moveX&gt;0 &amp;&amp; moveBx&lt;screenwidth &amp;&amp; moveY&gt;0 &amp;&amp; moveBy&lt;screenheight+screenScroll)&#123;</span><br><span class="line">            excel_float.style.left=x-halfWidth+<span class="string">'px'</span>;</span><br><span class="line">            excel_float.style.top=y-halfWidth-screenScroll+<span class="string">'px'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> touchendFun(evt)&#123;</span><br><span class="line">        //element.removeEventListener(<span class="built_in">type</span>，handler，<span class="literal">false</span>/<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p><strong><em>defer与async的区别是：</em></strong><br>defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。</p>
+<script src="e.js" defer></script>
+<script src="e.js" async></script>
 
+<p>昨天日期：<br>    function GetDateStr(AddDayCount) {<br>        var dd = new Date();<br>        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期<br>        var y = dd.getFullYear();<br>        var m = dd.getMonth()+1;//获取当前月份的日期<br>        var d = dd.getDate();<br>        return y+”-“+m+”-“+d;<br>    }<br>    console.log(“<br>昨天：”+GetDateStr(-1));<br></p>
+        
+          <a class="article-more-a" href="/fullstack/2017/09/03/js/#more">more >></a>
+        
       
 
       
@@ -578,7 +597,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/fullstack/2017/09/03/js-下载拖动/">展开全文 >></a>
+          <a class="article-more-a" href="/fullstack/2017/09/03/js/">展开全文 >></a>
         </p>
       
 
@@ -653,6 +672,80 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/fullstack/2017/09/03/js-单双击判断/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js-下载拖动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/fullstack/2017/09/03/js-下载拖动/">浮动下载拖动</a>
+    </h1>
+  
+
+        
+        <a href="/fullstack/2017/09/03/js-下载拖动/" class="archive-article-date">
+  	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>浮动下载拖动</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(document.querySelector(<span class="string">".excel_float"</span>))&#123;</span><br><span class="line">    var excel_float=document.querySelector(<span class="string">".excel_float"</span>);</span><br><span class="line">    excel_float.addEventListener(<span class="string">'touchmove'</span>,touchmoveFun,<span class="literal">false</span>);</span><br><span class="line">    excel_float.addEventListener(<span class="string">"touchend"</span>,touchendFun,<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">function</span> touchmoveFun(evt)&#123;</span><br><span class="line">        evt.preventDefault();//阻止触摸时浏览器的缩放、滚动条等</span><br><span class="line">        var touch=evt.touches[0];//获取第一个触点</span><br><span class="line">        var x=Number(touch.pageX);//页面触点X坐标</span><br><span class="line">        var y=Number(touch.pageY);//页面触点Y坐标</span><br><span class="line">        var width=excel_float.offsetWidth;</span><br><span class="line">        var halfWidth=parseFloat(width)*0.5;</span><br><span class="line">        var moveX=x-halfWidth;</span><br><span class="line">        var moveY=y-halfWidth;</span><br><span class="line">        var moveBx=x+halfWidth;</span><br><span class="line">        var moveBy=y+halfWidth;</span><br><span class="line">        var screenScroll=document.documentElement.scrollTop  || document.body.scrollTop;</span><br><span class="line">        var screenwidth = document.documentElement.clientWidth || document.body.clientWidth;</span><br><span class="line">        var muicontentwidth=document.querySelector(<span class="string">".mui-content"</span>).offsetWidth;</span><br><span class="line">        var screenheight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">        <span class="keyword">if</span>(moveX&gt;0 &amp;&amp; moveBx&lt;screenwidth &amp;&amp; moveY&gt;0 &amp;&amp; moveBy&lt;screenheight+screenScroll)&#123;</span><br><span class="line">            excel_float.style.left=x-halfWidth+<span class="string">'px'</span>;</span><br><span class="line">            excel_float.style.top=y-halfWidth-screenScroll+<span class="string">'px'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> touchendFun(evt)&#123;</span><br><span class="line">        //element.removeEventListener(<span class="built_in">type</span>，handler，<span class="literal">false</span>/<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/fullstack/2017/09/03/js-下载拖动/">展开全文 >></a>
         </p>
       
 
@@ -856,86 +949,9 @@
 
 
   
-    <article id="post-hexo-安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/fullstack/2017/09/03/hexo-安装/">hexo 安装</a>
-    </h1>
-  
-
-        
-        <a href="/fullstack/2017/09/03/hexo-安装/" class="archive-article-date">
-  	<time datetime="2017-09-03T12:16:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.首先安装node npm git</p>
-<p>2.安装hexo ：npm install hexo-cli -g<br></p>
-        
-          <a class="article-more-a" href="/fullstack/2017/09/03/hexo-安装/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/fullstack/2017/09/03/hexo-安装/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/fullstack/page/2/">&laquo; Prev</a><a class="page-number" href="/fullstack/">1</a><a class="page-number" href="/fullstack/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/fullstack/page/2/">&laquo; Prev</a><a class="page-number" href="/fullstack/">1</a><a class="page-number" href="/fullstack/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/fullstack/page/4/">4</a><a class="extend next" rel="next" href="/fullstack/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -1030,7 +1046,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1038,7 +1054,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">防抖和节流</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1046,11 +1066,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mobile</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,7 +1082,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mobile</a>
+                <a href="javascript:void(0)" class="js-tag color2">typeof与instanceof的异同?</a>
               </li>
              
               <li class="article-tag-list-item">

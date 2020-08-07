@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="myblog">
 <meta property="og:description" content="12345678910111213141516171819202122232425262728293031&amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&amp;gt;&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-09-26T05:51:47.735Z">
+<meta property="og:updated_time" content="2020-07-30T04:31:28.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mobile">
 <meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031&amp;lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&amp;gt;&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-">
@@ -180,8 +180,9 @@
 <p>var btn = document.getElementById(‘btn’);<br>btn.onclick = function(event){//给btn绑定一个点击事件<br>  //这里用一个三元表达式来做简单判断，如果存在document.all那么使用window.event<br>  //否则就直接用event<br>  var ev = document.all ? window.event : event;<br>  alert(ev);<br>} </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//对象字量量格式</span><br><span class="line">var obj = &#123; name: <span class="string">"姓名"</span>, sex: 25 &#125;;</span><br><span class="line">//JSON对象格式</span><br><span class="line">var json = &#123; <span class="string">"name"</span>: <span class="string">"姓名"</span>, <span class="string">"sex"</span>: <span class="string">"25"</span> &#125;;</span><br><span class="line">//JSON字符串</span><br><span class="line">var json_string = <span class="string">'&#123;"name":"姓名","sex":"25"&#125;'</span>;</span><br><span class="line">//测试</span><br><span class="line">document.write(json_string.name) //结果：undefined，说明：不能访问JSON字符串里面的数据</span><br><span class="line">var string_to_json = JSON.parse(json_string);</span><br><span class="line">document.write(string_to_json.name) //结果：姓名，说明：把JSON字符串转换为JSON对象格式后可以访问数据</span><br><span class="line">var json_to_string = JSON.stringify(json);</span><br><span class="line">document.write(json_to_string); //结果：&#123;<span class="string">"name"</span>:<span class="string">"姓名"</span>,<span class="string">"sex"</span>:<span class="string">"25"</span>&#125; ，说明：把JSON对象转换成了字符串</span><br></pre></td></tr></table></figure>
 <hr>
-<p>在jquery的ajax函数中，可以传入3种类型的数据<br>1.文本：”uname=alice&amp;mobileIpt=110&amp;birthday=1983-05-12”<br>2.json对象：{uanme:’vic’,mobileIpt:’110’,birthday:’2013-11-11’}<br>3.json数组：<br>[<br>    {“name”:”uname”,”value”:”alice”},<br>    {“name”:”mobileIpt”,”value”:”110”},<br>    {“name”:”birthday”,”value”:”2012-11-11”}</p>
-<h2 id><a href="#" class="headerlink" title="]"></a>]</h2><p>//设小号字体<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body,p&#123; margin:0; padding:0&#125;</span><br><span class="line">p&#123;font-size:8px;&#125;</span><br><span class="line">span&#123;-webkit-transform:scale(0.8);-o-transform:scale(1); display:inline-block&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在jquery的ajax函数中，可以传入3种类型的数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.文本：<span class="string">"uname=alice&amp;mobileIpt=110&amp;birthday=1983-05-12"</span></span><br><span class="line">2.json对象：&#123;uanme:<span class="string">'vic'</span>,mobileIpt:<span class="string">'110'</span>,birthday:<span class="string">'2013-11-11'</span>&#125;</span><br><span class="line">3.json数组：</span><br><span class="line">[</span><br><span class="line">    &#123;<span class="string">"name"</span>:<span class="string">"uname"</span>,<span class="string">"value"</span>:<span class="string">"alice"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>:<span class="string">"mobileIpt"</span>,<span class="string">"value"</span>:<span class="string">"110"</span>&#125;,   </span><br><span class="line">    &#123;<span class="string">"name"</span>:<span class="string">"birthday"</span>,<span class="string">"value"</span>:<span class="string">"2012-11-11"</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>//设小号字体<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body,p&#123; margin:0; padding:0&#125;</span><br><span class="line">p&#123;font-size:8px;&#125;</span><br><span class="line">span&#123;-webkit-transform:scale(0.8);-o-transform:scale(1); display:inline-block&#125;</span><br></pre></td></tr></table></figure></p>
 <p>@media<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">device-height:设备屏幕的高度。</span><br><span class="line">orientation:检测设备目前处于横向还是纵向状态。</span><br><span class="line">aspect-ratio:检测浏览器可视宽度和高度的比例。(例如：aspect-ratio:16/9)</span><br><span class="line">device-aspect-ratio:检测设备的宽度和高度的比例。</span><br></pre></td></tr></table></figure></p>
 
       
@@ -440,7 +441,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,7 +449,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">防抖和节流</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,11 +461,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mobile</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,7 +477,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mobile</a>
+                <a href="javascript:void(0)" class="js-tag color2">typeof与instanceof的异同?</a>
               </li>
              
               <li class="article-tag-list-item">
