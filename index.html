@@ -152,6 +152,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js-前端加密" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/fullstack/2020/08/14/js-前端加密/">前端几种加密方式整理</a>
+    </h1>
+  
+
+        
+        <a href="/fullstack/2020/08/14/js-前端加密/" class="archive-article-date">
+  	<time datetime="2020-08-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>*** md5加密：md5.js<br>MD5.js 共有6中加密方法:hex_md5(s), b64_md5(s), str_md5(s), hex_hmac_md5(key, data), b64_hmac_md5(key, data), str_hmac_md5(key, data)</p>
+<p>使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/md5.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br><span class="line">var <span class="built_in">pwd</span> = hex_md5(<span class="string">"Victor"</span>);</span><br><span class="line">console.log(<span class="built_in">pwd</span>);</span><br></pre></td></tr></table></figure></p>
+<p>base64加密：base64.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/base64.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">var str = b.encode(<span class="string">"admin:admin"</span>);       //加密</span><br><span class="line">var str1 = b.decode(str);       //解密</span><br><span class="line">console.log(str);</span><br><span class="line">console.log(str1);</span><br></pre></td></tr></table></figure></p>
+<p>sha1加密：sha1.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/sha1.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">var sha = hex_sha1(<span class="string">'mima123465'</span>);</span><br><span class="line">console.log(sha);</span><br></pre></td></tr></table></figure></p>
+<p>RSA加密：jsencrypt.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/jsencrypt.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">var str = <span class="string">"密码"</span>;</span><br><span class="line">// 公钥</span><br><span class="line">var publicKey = <span class="string">"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCfp4T5UK76SfSvn1wr4+PyStkHWONLVITZp5JLkFkHpiERchwShET+WVlLsbbgyt7Yt/boMoxr+XTD2NXd1gPvq11OU3dNYLE5hL2j8BCBw8EswkCbP+GgYdGF3FRw4eGURA4fcSO44IKuWtmtSyw7y1OMqzMUb6PROXrMFbrntQIDAQAB"</span>;</span><br><span class="line">// 私钥</span><br><span class="line">var privateKey = <span class="string">"MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJ+nhPlQrvpJ9K+fXCvj4/JK2QdY40tUhNmnkkuQWQemIRFyHBKERP5ZWUuxtuDK3ti39ugyjGv5dMPY1d3WA++rXU5Td01gsTmEvaPwEIHDwSzCQJs/4aBh0YXcVHDh4ZREDh9xI7jggq5a2a1LLDvLU4yrMxRvo9E5eswVuue1AgMBAAECgYBBGEtmX9hIIplKdf5dwtgw9QWSMlLSZw6Xs/Q5LQyvyrOW6mC5yAZdck6vRzFabDz6Pd/FAr8wUxChvapNfbIyhCsyAuqjVWV/aGDhaauQvwm3MrZ33jnMxI1z9UXPHTzWrYOltv/cKVqvDTKzEokDoTzEVLQClaYcEVMwhRrpYQJBANR48h9o1s7y0sAOoVBo5ktGZhb6gHtwNJ4Yw7Aey2bAWjgU4PevUq985+jBWhdAj81dZ0lMwARBIcYzyo0RLMkCQQDAXIup+fViw0BD+gl36kOo5RkTgz3aoALJsDBLGWi2J9QY9i0UZO9LsjNlYlTldKRzJWkhjdAdxuZe+8Mr8tWNAkB39HB92yqrW9wwIhJg21hpVy17+6FeD1MljsWsQTaEpERLNT5tl8YO3W3wsniyd/i38OvHLlWaEUuIIuVQD0pBAkAFXk/ThZNQl0xi2UaMXzBWNVaW0dHXGSIayN0AK4xdkQz9SVmGuS5oeWevy6e84513TTL66b9GJXfmbLZMsrE9AkAXuppwZW4I/xWZ2RaIsKqyyYYJUPbZ9HT3iO6FSUVPskzaOIPgU9sir+UcvJfWgXDWQ2F/4uUogB2ZS45YcFM8"</span>;</span><br><span class="line">// 加密</span><br><span class="line">var encrypt = new JSEncrypt();</span><br><span class="line">encrypt.setPublicKey(publicKey);</span><br><span class="line">var encryptStr = encrypt.encrypt(str);</span><br><span class="line">console.log(<span class="string">"加密后："</span> + encryptStr);</span><br><span class="line">// 解密</span><br><span class="line">var decrypt = new JSEncrypt();</span><br><span class="line">decrypt.setPrivateKey(privateKey);</span><br><span class="line">var decryptStr = decrypt.decrypt(encryptStr);</span><br><span class="line">console.log( <span class="string">"解密后："</span> + decryptStr);</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/fullstack/2020/08/14/js-前端加密/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-meta" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -865,81 +943,6 @@ sm.usePower();
 
 
   
-    <article id="post-regExp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/fullstack/2020/01/01/regExp/">regExp</a>
-    </h1>
-  
-
-        
-        <a href="/fullstack/2020/01/01/regExp/" class="archive-article-date">
-  	<time datetime="2020-01-01T04:09:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>正则表达式<br>/abc/.exec(“abcdef”);//“abc”<br>/abc/.test(“abcde”);//true<br>/abc/.toString();//“/abc/“<br>var reg=/abc/;<br>reg.compile(“def”);//compile改变正则的属性<br>reg.test(“def”);//true</p>
-<p>String 类型与zhengze相关的方法<br>“abcabcdef”.search(/(abc)\1/);  //0<br>“aabbbbcc”.replace(/b+?/,”1”);   //aa1bbbcc<br>“aabbbbcc”.match(/b+/);    //[“bbbb”]<br>“aabbbbccbbaa”.match(/b+/g);    //[“bbbb”,”bb”]<br>“aabbbbccbbaa”.split(/b+/);  //[“aa”,”cc”,”aa”]</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/fullstack/2020/01/01/regExp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/fullstack/page/2/">2</a><a class="page-number" href="/fullstack/page/3/">3</a><a class="page-number" href="/fullstack/page/4/">4</a><a class="extend next" rel="next" href="/fullstack/page/2/">Next &raquo;</a>
@@ -1041,11 +1044,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">

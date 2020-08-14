@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//qingfenger.github.io">
-  <title>Tag: Git | myblog</title>
+  <title>前端几种加密方式整理 | myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="myblog">
-<meta property="og:url" content="//qingfenger.github.io/tags/Git/index.html">
+  <meta name="description" content="*** md5加密：md5.jsMD5.js 共有6中加密方法:hex_md5(s), b64_md5(s), str_md5(s), hex_hmac_md5(key, data), b64_hmac_md5(key, data), str_hmac_md5(key, data) 使用123&amp;lt;script src=&quot;js/md5.js&quot; type=&quot;text/javascript&quot;&amp;gt;">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端几种加密方式整理">
+<meta property="og:url" content="//qingfenger.github.io/2020/08/14/js-前端加密/index.html">
 <meta property="og:site_name" content="myblog">
+<meta property="og:description" content="*** md5加密：md5.jsMD5.js 共有6中加密方法:hex_md5(s), b64_md5(s), str_md5(s), hex_hmac_md5(key, data), b64_hmac_md5(key, data), str_hmac_md5(key, data) 使用123&amp;lt;script src=&quot;js/md5.js&quot; type=&quot;text/javascript&quot;&amp;gt;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-08-14T04:04:55.438Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myblog">
+<meta name="twitter:title" content="前端几种加密方式整理">
+<meta name="twitter:description" content="*** md5加密：md5.jsMD5.js 共有6中加密方法:hex_md5(s), b64_md5(s), str_md5(s), hex_hmac_md5(key, data), b64_hmac_md5(key, data), str_hmac_md5(key, data) 使用123&amp;lt;script src=&quot;js/md5.js&quot; type=&quot;text/javascript&quot;&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="myblog" type="application/atom+xml">
   
@@ -150,60 +155,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js-前端加密" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/fullstack/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/fullstack/2017/09/03/git/" class="archive-article-date">
-  	<time datetime="2017-09-03T12:33:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/fullstack/2017/09/03/git/">git</a>
+    <h1 class="article-title" itemprop="name">
+      前端几种加密方式整理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/fullstack/2020/08/14/js-前端加密/" class="archive-article-date">
+  	<time datetime="2020-08-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>*** md5加密：md5.js<br>MD5.js 共有6中加密方法:hex_md5(s), b64_md5(s), str_md5(s), hex_hmac_md5(key, data), b64_hmac_md5(key, data), str_hmac_md5(key, data)</p>
+<p>使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/md5.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br><span class="line">var <span class="built_in">pwd</span> = hex_md5(<span class="string">"Victor"</span>);</span><br><span class="line">console.log(<span class="built_in">pwd</span>);</span><br></pre></td></tr></table></figure></p>
+<p>base64加密：base64.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/base64.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">var str = b.encode(<span class="string">"admin:admin"</span>);       //加密</span><br><span class="line">var str1 = b.decode(str);       //解密</span><br><span class="line">console.log(str);</span><br><span class="line">console.log(str1);</span><br></pre></td></tr></table></figure></p>
+<p>sha1加密：sha1.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/sha1.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">var sha = hex_sha1(<span class="string">'mima123465'</span>);</span><br><span class="line">console.log(sha);</span><br></pre></td></tr></table></figure></p>
+<p>RSA加密：jsencrypt.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/jsencrypt.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">var str = <span class="string">"密码"</span>;</span><br><span class="line">// 公钥</span><br><span class="line">var publicKey = <span class="string">"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCfp4T5UK76SfSvn1wr4+PyStkHWONLVITZp5JLkFkHpiERchwShET+WVlLsbbgyt7Yt/boMoxr+XTD2NXd1gPvq11OU3dNYLE5hL2j8BCBw8EswkCbP+GgYdGF3FRw4eGURA4fcSO44IKuWtmtSyw7y1OMqzMUb6PROXrMFbrntQIDAQAB"</span>;</span><br><span class="line">// 私钥</span><br><span class="line">var privateKey = <span class="string">"MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJ+nhPlQrvpJ9K+fXCvj4/JK2QdY40tUhNmnkkuQWQemIRFyHBKERP5ZWUuxtuDK3ti39ugyjGv5dMPY1d3WA++rXU5Td01gsTmEvaPwEIHDwSzCQJs/4aBh0YXcVHDh4ZREDh9xI7jggq5a2a1LLDvLU4yrMxRvo9E5eswVuue1AgMBAAECgYBBGEtmX9hIIplKdf5dwtgw9QWSMlLSZw6Xs/Q5LQyvyrOW6mC5yAZdck6vRzFabDz6Pd/FAr8wUxChvapNfbIyhCsyAuqjVWV/aGDhaauQvwm3MrZ33jnMxI1z9UXPHTzWrYOltv/cKVqvDTKzEokDoTzEVLQClaYcEVMwhRrpYQJBANR48h9o1s7y0sAOoVBo5ktGZhb6gHtwNJ4Yw7Aey2bAWjgU4PevUq985+jBWhdAj81dZ0lMwARBIcYzyo0RLMkCQQDAXIup+fViw0BD+gl36kOo5RkTgz3aoALJsDBLGWi2J9QY9i0UZO9LsjNlYlTldKRzJWkhjdAdxuZe+8Mr8tWNAkB39HB92yqrW9wwIhJg21hpVy17+6FeD1MljsWsQTaEpERLNT5tl8YO3W3wsniyd/i38OvHLlWaEUuIIuVQD0pBAkAFXk/ThZNQl0xi2UaMXzBWNVaW0dHXGSIayN0AK4xdkQz9SVmGuS5oeWevy6e84513TTL66b9GJXfmbLZMsrE9AkAXuppwZW4I/xWZ2RaIsKqyyYYJUPbZ9HT3iO6FSUVPskzaOIPgU9sir+UcvJfWgXDWQ2F/4uUogB2ZS45YcFM8"</span>;</span><br><span class="line">// 加密</span><br><span class="line">var encrypt = new JSEncrypt();</span><br><span class="line">encrypt.setPublicKey(publicKey);</span><br><span class="line">var encryptStr = encrypt.encrypt(str);</span><br><span class="line">console.log(<span class="string">"加密后："</span> + encryptStr);</span><br><span class="line">// 解密</span><br><span class="line">var decrypt = new JSEncrypt();</span><br><span class="line">decrypt.setPrivateKey(privateKey);</span><br><span class="line">var decryptStr = decrypt.decrypt(encryptStr);</span><br><span class="line">console.log( <span class="string">"解密后："</span> + decryptStr);</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://qingfenger.github.io/2020/08/14/js-前端加密/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/fullstack/2020/07/29/meta/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">meta标签的作用与使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "//qingfenger.github.io/fullstack/2020/08/14/js-前端加密/",
+  owner: '13749686',
+  repo: 'https://qingfenger.github.io/fullstack/',
+  oauth: {
+    client_id: 'd27cac6107b0536f9f4a',
+    client_secret: '86dd74f130c852b29c76070bf2046b060a5aed43',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -226,9 +358,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

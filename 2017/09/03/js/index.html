@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="myblog">
 <meta property="og:description" content="defer与async的区别是：defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。    昨天日期：    function GetDateStr(AddDayCount) {        var dd">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-01-16T12:38:20.197Z">
+<meta property="og:updated_time" content="2020-08-13T00:38:50.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
 <meta name="twitter:description" content="defer与async的区别是：defer要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；async一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，defer是“渲染完再执行”，async是“下载完就执行”。    昨天日期：    function GetDateStr(AddDayCount) {        var dd">
@@ -183,7 +183,7 @@
 <pre><code>{% asset_img 1.jpg %}
 </code></pre><hr>
 <h2 id="jquery包含div本身：-“-test”-prop-“outerHTML”"><a href="#jquery包含div本身：-“-test”-prop-“outerHTML”" class="headerlink" title="jquery包含div本身：$(“.test”).prop(“outerHTML”);"></a>jquery包含div本身：$(“.test”).prop(“outerHTML”);</h2><p>$(“.checktype input:radio:checked”).each(function(index,elem){<br>    typeArray.push( $(elem).val());//选中的内容数组<br>});    </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">**比较器**</span><br><span class="line"><span class="keyword">function</span> compare(propertyName) &#123;</span><br><span class="line">	<span class="built_in">return</span> <span class="keyword">function</span> (object1, object2) &#123;</span><br><span class="line">		var value1 = object1[propertyName];</span><br><span class="line">		var value2 = object2[propertyName];</span><br><span class="line">		<span class="keyword">if</span> (parseFloat(value2) &lt; parseFloat(value1)) &#123;</span><br><span class="line">			<span class="built_in">return</span> -1;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (parseFloat(value2) &gt; parseFloat(value1)) &#123;</span><br><span class="line">			<span class="built_in">return</span> 1;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">return</span> 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">**比较器**</span><br><span class="line"><span class="keyword">function</span> compare(propertyName) &#123;</span><br><span class="line">	<span class="built_in">return</span> <span class="keyword">function</span> (object1, object2) &#123;</span><br><span class="line">		var value1 = object1[propertyName];</span><br><span class="line">		var value2 = object2[propertyName];</span><br><span class="line">		<span class="keyword">if</span> (parseFloat(value2) &lt; parseFloat(value1)) &#123;</span><br><span class="line">			<span class="built_in">return</span> -1;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (parseFloat(value2) &gt; parseFloat(value1)) &#123;</span><br><span class="line">			<span class="built_in">return</span> 1;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">return</span> 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//使用方法</span><br><span class="line">　　data.sort(compare(<span class="string">"name"</span>));</span><br></pre></td></tr></table></figure>
 <p>iframe跨域修改url<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.domain = <span class="string">"sinopec.com"</span>;</span><br><span class="line"> var url = window.top.location.href;</span><br><span class="line"> var url = window.parent.parent.location.href;</span><br></pre></td></tr></table></figure></p>
 <p>——-缓存—–<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(<span class="string">'pageshow'</span>, <span class="keyword">function</span>( e )&#123;</span><br><span class="line">	<span class="keyword">if</span> (e.persisted) &#123;//如果有缓存</span><br><span class="line">		window.location.reload()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>// 清除IE的ajax的结果缓存<br>$.ajaxSetup({ cache: false });</p>
@@ -305,11 +305,11 @@
   
 <nav id="article-nav">
   
-    <a href="/fullstack/2017/09/03/js-对url进行编码和解码(三种方式区别)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/fullstack/2017/09/03/js-下载拖动/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          js对url进行编码和解码（三种方式区别）
+          浮动下载拖动
         
       </div>
     </a>
@@ -462,11 +462,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Css</a>
+                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Notes</a>
+                <a href="javascript:void(0)" class="js-tag color4">Css</a>
               </li>
              
               <li class="article-tag-list-item">
